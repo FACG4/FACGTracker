@@ -1,0 +1,43 @@
+{
+  "name": "facgtracker",
+  "version": "1.0.0",
+  "description": "Our application is about : 1.  Tracking students attendance and their behavior . 2.  Improve learning process by giving and taking feedback from/to students . 3.  Notify students if they have a bad behavior by getting red flag . 4. Easier for facilitator to obtain student information .",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.3",
+    "env2": "^2.2.0",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "jsonwebtoken": "^8.2.1",
+    "pg": "^7.4.3",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "nodemon": "^1.17.4",
+    "supertest": "^3.1.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACG4/FACGTracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACG4/FACGTracker/issues"
+  },
+  "homepage": "https://github.com/FACG4/FACGTracker#readme"
+}
