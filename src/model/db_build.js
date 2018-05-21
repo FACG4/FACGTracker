@@ -1,13 +1,8 @@
-const dbConnection = require('./db_connection');
-
 const fs = require('fs');
+const dbConnection = require('./db_connection');
 
 const sql = fs.readFileSync(`${__dirname}/db_build.sql`).toString();
 
 dbConnection.query(sql, (err, res) => {
-  if (err) {
-    throw new Error(err);
-  } else {
-    console.log('the process success');
-  }
+  if (err) { throw new Error('Somthing happens when setting up the DataBase'); } else { console.log(`Database Have been Built Successfuly in ${process.env.NODE_ENV || 'DEVELOPMENT'} mode`); }
 });

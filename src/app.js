@@ -4,12 +4,14 @@ const favicon = require('serve-favicon');
 const path = require('path');
 const bodyParser = require('body-parser');
 
+require('env2')('./config.env');
+
+const app = express();
+
 const controllers = require('./controllers/index');
 require('env2')('./config.env');
 
 const helpers = require('./views/helpers/index');
-
-const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');

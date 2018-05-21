@@ -117,7 +117,7 @@ INSERT INTO days (week_id, day_no, date) VALUES
   (1, 4, '2018-05-23'),
   (1, 5, '2018-05-24'),
   (2, 1, '2018-05-27'),
-  (2, 2, '2018-05-28 23:11:15'),
+  (2, 2, '2018-05-28'),
   (2, 3, '2018-05-29'),
   (2, 4, '2018-05-30'),
   (2, 5, '2018-05-31'),
@@ -141,12 +141,6 @@ INSERT INTO flags(user_id, type) VALUES
   (1, 'attitude towards teemwork'),
   (2, 'attitude towards learning');
 
-INSERT INTO flags(user_id, type) VALUES
-  (1, 'attendance'),
-  (1, 'being on time'),
-  (1, 'attitude towards teemwork'),
-  (2, 'attitude towards learning');
-
 INSERT INTO feedbacks (user_id, content) VALUES
   (1, 'you are doing great but you should stop your bad attitude towards your teamwork, we all have different thoughts and we should bear with each other'),
   (1, 'you have been late for more than one day, please come in early');
@@ -156,11 +150,15 @@ INSERT INTO week_mentors (user_id, week_id) VALUES
   (6, 2),
   (6, 3);
 
-insert into workshops (day_id, title, link, start_time, end_time) VALUES
-  (1, 'title1' , 'link1' , '09:00:00' , '11:00:00'),
-  (8, 'title2', 'link2' , '12:00:00' , '13:00:00'),
-  (8, 'title4', 'link4' , '09:00:00' , '11:00:00'),
-  (14, 'title3', 'link3' , '15:00:00' , '17:00:00');
+insert into workshops (day_id, title, link, start_time, end_time) VALUES 
+  (2, 'Accessibility challenge', 'https://github.com/foundersandcoders/accessibility-challenge', '09:00:00', '10:00:00'),
+  (2, 'Git workshop', 'https://github.com/foundersandcoders/git-workflow-workshop-for-two', '10:00:00', '12:00:00'),
+  (2, 'Introduce projects', 'https://github.com/foundersandcoders/master-reference/blob/master/coursebook/week-1/project.md', '13:00:00', '13:30:00'),
+  (2, 'Introduce projects', 'https://github.com/foundersandcoders/master-reference/blob/master/coursebook/week-1/project.md', '13:00:00', '13:30:00'),
+  (2, 'Introduce projects', 'https://github.com/foundersandcoders/master-reference/blob/master/coursebook/week-1/project.md', '13:00:00', '13:30:00'),
+  (2, 'Introduce projects', 'https://github.com/foundersandcoders/master-reference/blob/master/coursebook/week-1/project.md', '13:00:00', '13:30:00')
+  
+
 INSERT INTO suggestions_complaints (user_id, content, type) VALUES
   (1, 'fun time', 'suggestion'),
   (2, 'fix AC', 'complaint');
