@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const controllers = require('./controllers/index');
 require('env2')('./config.env');
 
-// const helpers = require('./views/helpers/index');
+const helpers = require('./views/helpers/index');
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.engine('hbs', exphbs({
   layoutsDir: path.join(__dirname, 'views', 'layouts'),
   partialsDir: path.join(__dirname, 'views', 'partials'),
   defaultLayout: 'main',
-  // helpers,
+  helpers,
 }));
 
 app.set('port', process.env.PORT || 3000);
@@ -28,6 +28,6 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// app.use(controllers);
+app.use(controllers);
 
 module.exports = app;
