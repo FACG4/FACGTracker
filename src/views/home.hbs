@@ -1,0 +1,38 @@
+<div class="table">
+<section class = "home_body_style">
+  <div class="container_avatar_sidenavbar_style">
+    <img id="cf_avatar" class="cf_avatar_style" src="/images/cf_avatar.png" alt="cf avatar">
+
+    <label id="cf_name">WELCOME Ahmed Ajour</label>
+    <label id="cohort_name">FACG4</label>
+
+    <div class="container_sidenavbar_style">
+      <div class="item_sidenav_style">Home</div>
+      <hr>
+      <div class="item_sidenav_style">Reports <i class="icon fa fa-sort-down"></i></div>
+      <hr>
+      <div class="item_sidenav_style">Students <i class="icon fa fa-sort-down"></i></div>
+      <hr>
+      <div class="item_sidenav_style">Cirriculum</div>
+      <hr>
+      <div class="item_sidenav_style">Complaints and suggestions</div>
+    </div>
+
+  </div>
+
+  <div class="current_date_style">
+    <label>{{date.date}}</label>
+    <label>{{presentSts}}</label>
+    <label>{{absentSts}}</label>
+    <label>{{lateSts}}</label>
+    <label>{{leaveSts}}</label>
+    <label>{{weekMentors.first_name}} {{weekMentors.last_name}}</label>
+    <label>{{weekWorkshops1.name}}</label>
+    <label>{{weekWorkshops1.day_no}}</label>
+    {{#each weekWorkshops}}
+    <label>{{this.start_time}} {{this.end_time}}    {{this.title}} </label>
+    {{/each}}
+  </div>
+
+</div>
+</section>
