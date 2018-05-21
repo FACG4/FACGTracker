@@ -11,7 +11,7 @@ const app = express();
 const controllers = require('./controllers/index');
 require('env2')('./config.env');
 
-// const helpers = require('./views/helpers/index');
+const helpers = require('./views/helpers/index');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -20,7 +20,7 @@ app.engine('hbs', exphbs({
   layoutsDir: path.join(__dirname, 'views', 'layouts'),
   partialsDir: path.join(__dirname, 'views', 'partials'),
   defaultLayout: 'main',
-  // helpers,
+  helpers,
 }));
 
 app.set('port', process.env.PORT || 3000);
