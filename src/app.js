@@ -5,6 +5,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 const controllers = require('./controllers/index');
+const passportSetup=require('./controllers/passport-setup');
+
 require('env2')('./config.env');
 
 // const helpers = require('./views/helpers/index');
@@ -28,6 +30,6 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// app.use(controllers);
+app.use(controllers);
 
 module.exports = app;
