@@ -128,12 +128,10 @@ INSERT INTO days (week_id, day_no, date) VALUES
   (3, 5, '2018-05-07');
 
 INSERT INTO attendance(user_id, clock_in, clock_out, day_id) VALUES
-  (1, '09:00:00', '17:00:00', 1),
-  (2, '12:00:00', '14:00:00', 1),
-  (3, '09:00:00', '14:00:00', 2),
-  (4, '09:00:00', '14:00:00', 2),
-  (1, '09:00:00', '17:00:00', 2),
-  (2, '11:00:00', '12:00:00', 2);
+  (1, '09:00', '17:00', 1),
+  (2, '09:00', '14:00', 1),
+  (1, '012:00', '17:00', 2),
+  (2, '11:00', '12:00', 2);
 
 INSERT INTO flags(user_id, type) VALUES
   (1, 'attendance'),
@@ -146,18 +144,11 @@ INSERT INTO feedbacks (user_id, content) VALUES
   (1, 'you have been late for more than one day, please come in early');
 
 INSERT INTO week_mentors (user_id, week_id) VALUES
-  (6, 1),
-  (6, 2),
-  (6, 3);
+  (4, 1),
+  (4, 2),
+  (4, 3);
 
-insert into workshops (day_id, title, link, start_time, end_time) VALUES 
-  (2, 'Accessibility challenge', 'https://github.com/foundersandcoders/accessibility-challenge', '09:00:00', '10:00:00'),
-  (2, 'Git workshop', 'https://github.com/foundersandcoders/git-workflow-workshop-for-two', '10:00:00', '12:00:00'),
-  (2, 'Introduce projects', 'https://github.com/foundersandcoders/master-reference/blob/master/coursebook/week-1/project.md', '13:00:00', '13:30:00'),
-  (2, 'Introduce projects', 'https://github.com/foundersandcoders/master-reference/blob/master/coursebook/week-1/project.md', '13:00:00', '13:30:00'),
-  (2, 'Introduce projects', 'https://github.com/foundersandcoders/master-reference/blob/master/coursebook/week-1/project.md', '13:00:00', '13:30:00'),
-  (2, 'Introduce projects', 'https://github.com/foundersandcoders/master-reference/blob/master/coursebook/week-1/project.md', '13:00:00', '13:30:00')
-  
+-- insert into workshops
 
 INSERT INTO suggestions_complaints (user_id, content, type) VALUES
   (1, 'fun time', 'suggestion'),

@@ -4,11 +4,13 @@ const favicon = require('serve-favicon');
 const path = require('path');
 const bodyParser = require('body-parser');
 
+const controllers = require('./controllers/index');
+const passportSetup = require('./controllers/passport-setup');
+
 require('env2')('./config.env');
 
 const app = express();
 
-const controllers = require('./controllers/index');
 require('env2')('./config.env');
 
 const helpers = require('./views/helpers/index');
