@@ -5,11 +5,15 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 const controllers = require('./controllers/index');
+const passportSetup = require('./controllers/passport-setup');
+
+require('env2')('./config.env');
+
+const app = express();
+
 require('env2')('./config.env');
 
 const helpers = require('./views/helpers/index');
-
-const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
