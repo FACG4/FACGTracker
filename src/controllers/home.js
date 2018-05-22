@@ -1,4 +1,3 @@
-const getDate = require('../model/quires/get_date');
 const getPresentStudent = require('../model/quires/get_present_students');
 const getAbsentStudent = require('../model/quires/get_absent_students');
 const getLateStudent = require('../model/quires/get_late_students');
@@ -41,7 +40,7 @@ exports.get = (req, res) => {
                 weekMentors: getWeekMentorsResult,
                 weekWorkshops: getWeekworkshopsResult,
                 weekWorkshops1: getWeekworkshopsResult[0],
-                style_home: 'home_style.css',
+                style: 'home_style.css',
                 script: 'home_dom.js',
               });
             });
