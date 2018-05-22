@@ -6,7 +6,7 @@
 img {
   display: block;
   width: 35%;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 label {
@@ -205,9 +205,14 @@ label[for='title_studen_tracker'] {
   display: none
 }
 
-label[for='cohort_name'] {
+.name_cohort_style {
+  display: block;
   text-align: center;
   width: 100%;
+}
+
+.name_cohort_style label[for='cohort_name'] {
+  margin: 10px;
 }
 
 .no_padding {

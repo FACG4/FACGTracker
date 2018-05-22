@@ -10,7 +10,6 @@ passport.use(new GitHubStrategy(
 
   },
   (accessToken, refreshToken, profile, done) => {
-    // done();
     console.log(profile);
   },
 ));
