@@ -5,9 +5,15 @@
 <body>
   {{>header}}
   <main>
-    {{{body}}} {{>footer}}
-    <script type='text/javascript' src='/js/main.js'>
+    {{{body}}}
+  </main>
+  {{>footer}}
+    <script type='text/javascript' src='/js/logic.js'>
     </script>
+    {{#if script}}
+    <script type='text/javascript' src='/js/{{script}}'>
+    </script>
+    {{/if}}
 </body>
 
 </html>
