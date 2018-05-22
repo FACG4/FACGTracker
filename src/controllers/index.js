@@ -2,9 +2,12 @@ const router = require('express').Router();
 const attendance = require('./attendance');
 const home = require('./home');
 const githubLogin = require('./github-login');
+const manageSt = require('./manage_student');
 
 
 router.get('/login', githubLogin.get);
+router.get('/manageSt', manageSt.get);
+router.post('/deleteStudent', manageSt.delete);
 
 router.get('/github', githubLogin.githubInteract);
 router.get('/github/cb', githubLogin.githubInteract, githubLogin.githubCb);

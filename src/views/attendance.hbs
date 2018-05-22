@@ -1,5 +1,5 @@
 <section class="attendance">
-    <form action="/attendance" method="POST">
+  <form action="/attendance" method="POST">
     <table class="attendance-table">
       <tr>
         <th>Name</th>
@@ -8,23 +8,23 @@
         <th>Clock Out</th>
       </tr>
       {{#each students}}
-      <tr class="studentData">
-        <td id="fullName" class="{{this.id}}">{{this.first_name}} {{this.last_name}}</td>
-        <td>
-          <select id="attend">
+        <tr class="studentData">
+          <td id="fullName" class="{{this.id}}">{{this.first_name}} {{this.last_name}}</td>
+          <td>
+            <select id="attend">
             <option value="present">Present</option>
             <option value="absent">Absent</option>
           </select>
-        </td>
-        <td>
-          <input id="clockIn" type="time" name="clockIn" value="09:00">
-        </td>
-        <td>
-          <input id="clockOut" type="time" name="clockOut" value="17:00">
-        </td>
-      </tr>
+          </td>
+          <td>
+            <input id="clockIn" type="time" name="clockIn" value="09:00">
+          </td>
+          <td>
+            <input id="clockOut" type="time" name="clockOut" value="17:00">
+          </td>
+        </tr>
       {{/each}}
     </table>
-      <input type="submit" value="Save" id="saveAttendanceBtn">
-      </form>
-  </section>
+    <input type="submit" value="Save" id="saveAttendanceBtn">
+  </form>
+</section>
