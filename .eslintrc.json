@@ -2,5 +2,6 @@
     "extends": "airbnb-base",
     "rules":{
       "no-undef" :"off",
+      "consistent-return":"off"
     }
 }

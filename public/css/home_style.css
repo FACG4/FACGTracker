@@ -102,7 +102,11 @@ label[for='title_studen_tracker'] {
 .item_sidenav_style {
   font-weight: bold;
   padding: 10px;
-  color: #8b7e83;
+  color: #201d1e;
+}
+.item_sidenav_style:hover{
+  color: #a6969c;
+  cursor: pointer;
 }
 
 .current_date_style {
@@ -203,10 +207,12 @@ label[for='title_studen_tracker'] {
   display: none
 }
 
+
 .name_cohort_style {
   display: block;
   text-align: center;
   width: 100%;
+  margin: 10px 0 20px 0;
 }
 
 .name_cohort_style label[for='cohort_name'] {

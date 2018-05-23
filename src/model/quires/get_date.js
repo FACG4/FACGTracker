@@ -1,15 +1,16 @@
 const dbConnections = require('../db_connection');
-const getPresentStudent = require('./get_present_students');
+const formatDate = require('../../controllers/format_date');
 
-const abcentStudents = (cb) => {
-  const sql = 'SELECT id FROM users WHERE role = \'student\';';
+
+const getDate = (cb) => {
+  const sql = 'SELECT id FROM days WHERE date $1 ;';
   dbConnections.query(
     sql,
     (err, res) => {
       if (err) {
         cb(err);
       } else {
-        getPresentStudent((err1, getPresentStudentResult) => {
+        getPresentStudent(formatDate.getRightFormatDate.day, (err1, getPresentStudentResult) => {
           if (err1) {
             cb(err1);
           } else {
