@@ -3,15 +3,29 @@ const exphbs = require('express-handlebars');
 const favicon = require('serve-favicon');
 const path = require('path');
 const bodyParser = require('body-parser');
-
+const cookieSession = require('cookie-session');
 const controllers = require('./controllers/index');
+const passport = require('passport');
+
+
+//dont remove it pleeeeease
 const passportSetup = require('./controllers/passport-setup');
 
 require('env2')('./config.env');
 
 const app = express();
 
-require('env2')('./config.env');
+
+// set up session cookies
+app.use(cookieSession({
+  maxAge: 24 * 60 * 60 * 1000,
+  keys: [process.env.KEY]
+}));
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 const helpers = require('./views/helpers/index');
 

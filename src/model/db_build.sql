@@ -89,7 +89,7 @@ INSERT INTO users (first_name, last_name, email, bio, phone, password, role, git
   ('Sultan', 'Asi', 'a.sultan@gmail.com', 'great mentor', '0599223456', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'mentor', 'sultanasi', NULL),
   ('Ghada', 'Ibrahim', 'a.ghada@gmail.com', 'great admin', '0599123556', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'admin', 'ghadaibrahim', NULL),
   (NULL, NULL, 'abdalsamad.y.m@gamil.com', NULL, NULL, NULL, DEFAULT, NULL, 1),
-  (NULL, NULL, 'anoos.hanii@gmail.com', NULL, NULL, NULL, DEFAULT, NULL, 1),
+  (NULL, NULL, 'anoos.haniioi@gmail.com', NULL, NULL, NULL, DEFAULT, NULL, 1),
   (NULL, NULL, 'blsam.2332016@gmail.com', NULL, NULL, NULL, DEFAULT, NULL, 1);
 
 INSERT INTO weeks(week_no, name, cohort_id) VALUES
