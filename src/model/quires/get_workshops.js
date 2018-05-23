@@ -1,7 +1,12 @@
 const dbConnections = require('../db_connection');
+const formatDate = require('../../controllers/format_date');
 
+const date = formatDate.getRightFormatDate().newdate.split(',')[1];
 const weekWorkshops = (cb) => {
-  const sql = 'select ws.title , ws.start_time , ws.end_time , w.name ,w.id ,w.week_no, d.day_no from workshops ws inner join days d on d.id = ws.day_id INNER JOIN weeks w ON d.week_id = w.id where w.id = 2 ;';
+  const sql = {
+    text: 'SELECT d.id, d.day_no, w.week_no, w.name, wo.title, wo.start_time, wo.end_time FROM days d INNER JOIN weeks w ON w.id = d.week_id INNER JOIN workshops wo ON wo.day_id = d.id WHERE d.date = $1 AND w.cohort_id = 1; ;',
+    values: [date],
+  };
   dbConnections.query(
     sql,
     (err, res) => {

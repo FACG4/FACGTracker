@@ -7,9 +7,9 @@
     </div>
 
     <div class="container_sidenavbar_style">
-      <div class="item_sidenav_style">Home</div>
+      <div id="home" class="item_sidenav_style">Home</div>
       <hr>
-      <div class="item_sidenav_style">Take attendance</div>
+      <div id="attendance" class="item_sidenav_style">Take attendance</div>
       <hr>
       <div id="reports" class="item_sidenav_style">Reports <i class="icon fa fa-sort-down"></i>
         <div class="disable">
@@ -44,24 +44,26 @@
 
   </div>
   <div class="container">
-    <label for="FACG4_Students">FACG4 Students</label>
+    <div class="label_title_style">
+      <label class="FACG4_Students" for="FACG4_Students">FACG4 Students</label>
+    </div>
     <div class="divs_style">
       {{#each names}}
-      {{#if this.first_name}}
-      {{#if this.last_name}}
-      <div class="contaner_user_profile_style">
-        <div class="img_name_style">
-          <img id="cf_avatar" src="/images/cf_avatar.png" alt="cf avatar">
-          <label for="user_name_style" class="user_name_style">{{this.first_name}}  {{this.last_name}}</label>
-        </div>
-        <div id="{{this.id}}" class="float_buttons_style">
-          <button type="button" name="profile">View profile</button>
-          <button type="button" name="delete">Delete</button>
-        </div>
-        <hr>
-      </div>
-      {{/if}}
-      {{/if}}
+        {{#if this.first_name}}
+          {{#if this.last_name}}
+            <div class="contaner_user_profile_style">
+              <div class="img_name_style">
+                <img id="cf_avatar" src="/images/cf_avatar.png" alt="cf avatar">
+                <label for="user_name_style" class="user_name_style">{{this.first_name}}  {{this.last_name}}</label>
+              </div>
+              <div id="{{this.id}}" class="float_buttons_style">
+                <button type="button" name="profile">View profile</button>
+                <button type="button" name="delete">Delete</button>
+              </div>
+              <hr>
+            </div>
+          {{/if}}
+        {{/if}}
       {{/each}}
     </div>
   </div>

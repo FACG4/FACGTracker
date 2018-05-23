@@ -128,10 +128,10 @@ INSERT INTO days (week_id, day_no, date) VALUES
   (3, 5, '2018-05-07');
 
 INSERT INTO attendance(user_id, clock_in, clock_out, day_id) VALUES
-  (1, '09:00', '17:00', 1),
-  (2, '09:00', '14:00', 1),
-  (1, '12:00', '17:00', 2),
-  (2, '11:00', '12:00', 2);
+  (1, '09:00:00', '17:00:00', 1),
+  (2, '09:00:00', '14:00:00', 1),
+  (1, '09:00:00', '12:00:00', 4),
+  (2, '11:00:00', '17:00:00', 4);
 
 INSERT INTO flags(user_id, type) VALUES
   (1, 'attendance'),
@@ -144,11 +144,15 @@ INSERT INTO feedbacks (user_id, content) VALUES
   (1, 'you have been late for more than one day, please come in early');
 
 INSERT INTO week_mentors (user_id, week_id) VALUES
-  (4, 1),
-  (4, 2),
-  (4, 3);
+  (6, 1),
+  (6, 2),
+  (6, 3);
 
--- insert into workshops
+INSERT INTO workshops (day_id , title , link , start_time , end_time) VALUES
+(1 , 'title1' , 'link1' , '09:00:00' , '11:00:00'),
+(4 , 'title2' , 'link2' , '11:00:00' , '12:00:00'),
+(10 , 'title3' , 'link3' , '13:00:00' , '15:00:00');
+
 
 INSERT INTO suggestions_complaints (user_id, content, type) VALUES
   (1, 'fun time', 'suggestion'),
