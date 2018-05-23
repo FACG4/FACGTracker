@@ -43,54 +43,26 @@
     </div>
 
   </div>
-  <div class="no_padding">
-    <div class="current_date_style">
-      <label for="date">{{my_date}}</label>
-    </div>
-    <div>
-      <label for="title_studen_tracker">Daily Student Tracking</label>
-      <div class="student_tracker_titles">
-        <label for="title_tracking_style">Present</label>
-        <label for="title_tracking_style">Absent</label>
-        <label for="title_tracking_style">Late</label>
-        <label for="title_tracking_style">Leave</label>
+  <div class="container">
+    <label for="FACG4_Students">FACG4 Students</label>
+    <div class="divs_style">
+      {{#each names}}
+      {{#if this.first_name}}
+      {{#if this.last_name}}
+      <div class="contaner_user_profile_style">
+        <div class="img_name_style">
+          <img id="cf_avatar" src="/images/cf_avatar.png" alt="cf avatar">
+          <label for="user_name_style" class="user_name_style">{{this.first_name}}  {{this.last_name}}</label>
+        </div>
+        <div id="{{this.id}}" class="float_buttons_style">
+          <button type="button" name="profile">View profile</button>
+          <button type="button" name="delete">Delete</button>
+        </div>
+        <hr>
       </div>
-      <div class="student_tracker">
-        <label for="presentSt">{{presentSts}}</label>
-        <label for="absentSt">{{absentSts}}</label>
-        <label for="lateSt">{{lateSts}}</label>
-        <label for="leaveSt">{{leaveSts}}</label>
-      </div>
-    </div>
-    <div class="container_tables">
-      <table>
-        <tr class="table_title_style">
-          <th>Week Mentors</th>
-        </tr>
-        {{#each weekMentors}}
-          <tr>
-            <th>{{this.first_name}} {{this.last_name}}</th>
-          </tr>
-        {{/each}}
-      </table>
-
-      <table>
-        <tr class="title_style">
-          <th>Week in progress : week{{weekWorkshops1.week_no}} ( {{weekWorkshops1.name}} )</th>
-        </tr>
-        <tr class="subtitle_style">
-          <th>Today’s schedule</th>
-        </tr>
-        <tr class="subtitle2_style">
-          <th>day{{weekWorkshops1.day_no}}</th>
-        </tr>
-        {{#each weekWorkshops}}
-          <tr>
-            <th>{{this.start_time}} {{this.end_time}} {{this.title}} </th>
-          </tr>
-        {{/each}}
-      </table>
+      {{/if}}
+      {{/if}}
+      {{/each}}
     </div>
   </div>
-
 </section>

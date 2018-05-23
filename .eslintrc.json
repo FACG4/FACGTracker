@@ -1,4 +1,7 @@
 {
     "extends": "airbnb-base",
-    "rules": {"comma-dangle": "off"}
+    "rules": {
+      "comma-dangle": "off",
+      "no-undef": "off"
+    }
 }

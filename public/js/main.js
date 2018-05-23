@@ -18,8 +18,11 @@ saveAttendanceBtn.addEventListener('click', (event) => {
       clockIn: clockIn.value,
       clockOut: clockOut.value,
     });
+
     fetch('/attendance', {
-      headers: { 'content-type': 'application/json' },
+      headers: {
+        'content-type': 'application/json',
+      },
       method: 'POST',
       body: data,
     })
