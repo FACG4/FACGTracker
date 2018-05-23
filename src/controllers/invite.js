@@ -1,6 +1,4 @@
 const { google } = require('googleapis');
-const request = require('request');
-// const nodemailer = require('nodemailer');
 require('env2')('./config.env');
 
 const oauth2Client = new google.auth.OAuth2(
@@ -12,29 +10,22 @@ const scopes = [
   'https://www.googleapis.com/auth/gmail.send'
 ];
 const url = oauth2Client.generateAuthUrl({
-  access_type: 'offline',
+  access_type: 'online',
+  response_type: 'code',
   scope: scopes
 });
-exports.get = (req, res) => {
-  res.render('invite');
-};
-
 let studentEmail;
+exports.get = (req, res) => {
+  res.render('invite', { url });
+};
 exports.getcode = (req, res) => {
-  request(url, (err, response, body) => {
-    if (err) return console.log('gettoken error', err);
-    res.send(body);
-    studentEmail = req.body.studentEmail;
-    console.log('studentEmail', req.body);
-  });
+  studentEmail = req.body.studentEmail;
+  res.redirect(url);
 };
 exports.gettoken = (req, res) => {
   oauth2Client.getToken(req.query.code, (err, tokens) => {
     console.log('tokens', tokens);
     oauth2Client.setCredentials(tokens);
-    // google.options({
-    //   auth: oauth2Client
-    // });
     const gmail = google.gmail('v1');
     const emailLines = [];
     emailLines.push('From: abuata1987@gmail.com');
@@ -48,7 +39,6 @@ exports.gettoken = (req, res) => {
     const email = emailLines.join('\r\n').trim();
     let base64EncodedEmail = Buffer.from(email).toString('base64');
     base64EncodedEmail = base64EncodedEmail.replace(/\+/g, '-').replace(/\//g, '_');
-    console.log('based64emal', base64EncodedEmail);
     gmail.users.messages.send({
       userId: 'me',
       auth: oauth2Client,

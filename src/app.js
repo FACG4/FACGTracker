@@ -5,6 +5,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 const controllers = require('./controllers/index');
+
+// to set up the passport configerations
 const passportSetup = require('./controllers/passport-setup');
 
 require('env2')('./config.env');
