@@ -130,7 +130,7 @@ INSERT INTO days (week_id, day_no, date) VALUES
 INSERT INTO attendance(user_id, clock_in, clock_out, day_id) VALUES
   (1, '09:00', '17:00', 1),
   (2, '09:00', '14:00', 1),
-  (1, '012:00', '17:00', 2),
+  (1, '12:00', '17:00', 2),
   (2, '11:00', '12:00', 2);
 
 INSERT INTO flags(user_id, type) VALUES
