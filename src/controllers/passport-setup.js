@@ -13,8 +13,9 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser((id, done) => {
   if (id == null) {
     done(new Error('Wrong user id.'));
+  } else {
+    done(null, id);
   }
-  done(null, id);
 });
 
 passport.use(new GitHubStrategy(

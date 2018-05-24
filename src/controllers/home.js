@@ -30,7 +30,7 @@ exports.get = (req, res) => {
                 weekWorkshops: getWeekworkshopsResult,
                 weekWorkshops1: getWeekworkshopsResult[0],
                 style: ['home_style.css'],
-                script: 'home_dom.js',
+                script: ['home_dom.js'],
               });
             });
           });
