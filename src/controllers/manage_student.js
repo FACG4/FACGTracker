@@ -14,7 +14,9 @@ exports.get = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  deleteStudent(req.body.id, (deleteStudentErr) => {
-    if (deleteStudentErr) return res.status(500);
-  });
+  if (req.body.id) {
+    deleteStudent(req.body.id, (deleteStudentErr) => {
+      if (deleteStudentErr) return res.status(500);
+    });
+  }
 };
