@@ -4,12 +4,11 @@
 
 <body>
   {{>header}}
-  <main>
+  <main class="main">
     {{{body}}}
   </main>
   {{>footer}}
-  <script type='text/javascript' src='/js/logic.js'>
-  </script>
+  <script type='text/javascript' src='/js/logic.js'></script>
   {{#if script}}
   {{#each script}}
     <script type='text/javascript' src='/js/{{this}}'>
@@ -17,5 +16,4 @@
   {{/each}}
   {{/if}}
 </body>
-
 </html>

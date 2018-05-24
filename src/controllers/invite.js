@@ -22,20 +22,8 @@ exports.get = (req, res) => {
     if (err) {
       console.error('get unregistered students', err);
     }
-    res.render('inviteSt', { emails, style: 'invite_students.css', script: ['manage_st_dom.js', 'invite_st.js'] });
+    res.render('inviteSt', { emails, style: ['manage_student_style.css', 'invite_students.css'], script: ['manage_st_dom.js', 'invite_st.js'] });
   });
-};
-exports.deleteStudent = (req, res) => {
-  const userId = req.query.id;
-  console.log(req.query);
-  // inviteStudent.deleteUser(userId, (deleteUserError, deleteRes) => {
-  //   if (deleteUserError) {
-  //     console.error('deleteUserError', deleteUserError);
-  //   } else {
-  //     // sweet alert (email ... has been deleted)
-  //     console.log('deleted', deleteRes);
-  //   }
-  // });
 };
 
 exports.getcode = (req, res) => {

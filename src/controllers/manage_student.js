@@ -7,7 +7,7 @@ exports.get = (req, res) => {
     if (getStNamesErr) return res.status(500);
     res.render('manage_student', {
       names: getStNamesResult,
-      style: 'manage_student_style.css',
+      style: ['manage_student_style.css'],
       script: 'manage_st_dom.js',
     });
   });
