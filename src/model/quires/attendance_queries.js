@@ -10,15 +10,6 @@ const executeQuery = (sql, cb) => {
   });
 };
 
-// const getAttendanceInfo = (cohortId, weekNo, date, cb) => {
-//   const sql = {
-//     test: 'select users.github_username, days.date, cohort.name from users inner join attendance on attendance.user_id = users.id inner join days on days.id = attendance.day_id inner join cohort ON cohort.id = users.cohort_id where days.week_id = (select id from weeks where weeks.cohort_id = $1 and weeks.week_no = $2) and days.date = $3',
-//     values: [cohortId, weekNo, date],
-//   };
-//   executeQuery(sql, cb);
-// };
-
-// new stuff
 const getPresetStudnets = (cohortId, date, cb) => {
   const sql = {
     text: 'select attendance.*, users.first_name, users.last_name from attendance inner join users ON users.id = attendance.user_id where attendance.day_id = (select days.id from days inner join weeks on weeks.id = days.week_id where weeks.cohort_id = $1 and days.date = $2)',
@@ -41,28 +32,17 @@ const getAttendanceInfo = (cohortId, date, cb) => {
       console.log(err);
     } else {
       const presentSudnetsIds = presents.map(student => student.user_id);
-      console.log('present', presents);
-
       getAllStudnets(cohortId, (err1, all) => {
         if (err) {
           console.log(err1);
         } else {
           const allStudents = all.filter(student => presentSudnetsIds.indexOf(student.id) === -1);
-          console.log(allStudents);
           cb(null, presents.concat(allStudents));
         }
       });
     }
   });
 };
-
-// const getAttendanceInfo = (todayDate, cb) => {
-//   const sql = {
-//     text: "select users.*, attendance.clock_in, attendance.clock_out, attendance.day_id from users left outer join attendance ON attendance.user_id = users.id where users.role='student' and users.phone is not null and (attendance.day_id is null or attendance.day_id = (select days.id from days where days.date = $1))",
-//     values: [todayDate],
-//   };
-//   executeQuery(sql, cb);
-// };
 
 const saveAttendance = (userId, clockIn, clockOut, cohortId, date, cb) => {
   const sql = {

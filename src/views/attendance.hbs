@@ -1,3 +1,4 @@
+{{>asidebar}}
 <section class="attendance">
     <form action="/attendance" method="POST">
     <table class="attendance-table" id="attendanceTable">
@@ -46,6 +47,6 @@
       {{/if}}
       {{/each}}
     </table>
-      <input type="submit" value="Save" id="saveAttendanceBtn">
-      </form>
-  </section>
+    <input type="submit" value="Save" class="attendance-save-button" id="saveAttendanceBtn">
+  </form>
+</section>

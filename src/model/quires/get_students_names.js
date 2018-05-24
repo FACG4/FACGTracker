@@ -1,7 +1,7 @@
 const dbConnections = require('../db_connection');
 
-const currentDate = (cb) => {
-  const sql = 'SELECT date FROM days WHERE week_id = 2 AND day_no=2;';
+const usersName = (cb) => {
+  const sql = 'SELECT id ,first_name , last_name FROM users WHERE role = \'student\';';
   dbConnections.query(
     sql,
     (err, res) => {
@@ -14,4 +14,4 @@ const currentDate = (cb) => {
   );
 };
 
-module.exports = currentDate;
+module.exports = usersName;

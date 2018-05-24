@@ -2,7 +2,7 @@ const attendanceQueries = require('../model/quires/attendance_queries');
 
 exports.get = (req, res) => {
   attendanceQueries.getAttendanceInfo(1, '2018-05-20', (err, students) => {
-    res.render('attendance', { students });
+    res.render('attendance', { students, style: ['home_style.css', 'attendance.css'], script: 'main.js' });
   });
 };
 
@@ -16,7 +16,7 @@ exports.insert = (req, res) => {
     if (err) {
       console.log('err', err);
     } else {
-      console.log('good', info);
+      console.log('saved');
     }
   });
 };

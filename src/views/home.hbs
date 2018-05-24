@@ -1,38 +1,52 @@
-<div class="table">
-<section class = "home_body_style">
-  <div class="container_avatar_sidenavbar_style">
-    <img id="cf_avatar" class="cf_avatar_style" src="/images/cf_avatar.png" alt="cf avatar">
-
-    <label id="cf_name">WELCOME Ahmed Ajour</label>
-    <label id="cohort_name">FACG4</label>
-
-    <div class="container_sidenavbar_style">
-      <div class="item_sidenav_style">Home</div>
-      <hr>
-      <div class="item_sidenav_style">Reports <i class="icon fa fa-sort-down"></i></div>
-      <hr>
-      <div class="item_sidenav_style">Students <i class="icon fa fa-sort-down"></i></div>
-      <hr>
-      <div class="item_sidenav_style">Cirriculum</div>
-      <hr>
-      <div class="item_sidenav_style">Complaints and suggestions</div>
+<section class="home_body_style">
+  {{>asidebar}}
+  <div class="no_padding">
+    <div class="current_date_style">
+      <label for="date">{{my_date}}</label>
     </div>
-
+    <div>
+      <label for="title_studen_tracker">Daily Student Tracking</label>
+      <div class="student_tracker_titles">
+        <label for="title_tracking_style">Present</label>
+        <label for="title_tracking_style">Absent</label>
+        <label for="title_tracking_style">Late</label>
+        <label for="title_tracking_style">Leave</label>
+      </div>
+      <div class="student_tracker">
+        <label for="presentSt">{{presentSts}}</label>
+        <label for="absentSt">{{absentSts}}</label>
+        <label for="lateSt">{{lateSts}}</label>
+        <label for="leaveSt">{{leaveSts}}</label>
+      </div>
+    </div>
+    <div class="container_tables">
+      <table>
+        <tr class="table_title_style">
+          <th>Week Mentors</th>
+        </tr>
+        {{#each weekMentors}}
+          <tr>
+            <th>{{this.first_name}} {{this.last_name}}</th>
+          </tr>
+        {{/each}}
+      </table>
+      <table>
+        <tr class="title_style">
+          <th>Week in progress : week{{weekWorkshops1.week_no}} ( {{weekWorkshops1.name}} )</th>
+        </tr>
+        <tr class="subtitle_style">
+          <th>Today’s schedule</th>
+        </tr>
+        <tr class="subtitle2_style">
+          <th>day{{weekWorkshops1.day_no}}</th>
+        </tr>
+        {{#each weekWorkshops}}
+          <tr>
+            <th>{{this.start_time}} {{this.end_time}} {{this.title}} </th>
+          </tr>
+        {{/each}}
+      </table>
+    </div>
   </div>
 
-  <div class="current_date_style">
-    <label>{{date.date}}</label>
-    <label>{{presentSts}}</label>
-    <label>{{absentSts}}</label>
-    <label>{{lateSts}}</label>
-    <label>{{leaveSts}}</label>
-    <label>{{weekMentors.first_name}} {{weekMentors.last_name}}</label>
-    <label>{{weekWorkshops1.name}}</label>
-    <label>{{weekWorkshops1.day_no}}</label>
-    {{#each weekWorkshops}}
-    <label>{{this.start_time}} {{this.end_time}}    {{this.title}} </label>
-    {{/each}}
-  </div>
-
-</div>
 </section>
