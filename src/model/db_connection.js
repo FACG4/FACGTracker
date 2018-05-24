@@ -3,7 +3,7 @@ const url = require('url');
 
 require('env2')('./config.env');
 
-const DB_URL = process.env.DB_DEV_URL;
+let DB_URL = process.env.DB_DEV_URL;
 if (process.env.NODE_ENV === 'test') {
   DB_URL = process.env.TEST_DB_URL;
 }

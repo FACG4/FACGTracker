@@ -1,7 +1,12 @@
 const dbConnections = require('../db_connection');
+const formatDate = require('../../controllers/format_date');
 
-const currentDate = (cb) => {
-  const sql = 'select a.user_id from attendance a join days d on a.day_id = d.id join weeks w on d.week_id = w.id where day_id = 2 ;';
+const date = formatDate.getRightFormatDate().newdate.split(',')[1];
+const presentSt = (cb) => {
+  const sql = {
+    text: 'SELECT a.user_id FROM attendance a JOIN days d ON a.day_id = d.id JOIN weeks w ON d.week_id = w.id WHERE d.date = $1;',
+    values: [date],
+  };
   dbConnections.query(
     sql,
     (err, res) => {
@@ -14,4 +19,4 @@ const currentDate = (cb) => {
   );
 };
 
-module.exports = currentDate;
+module.exports = presentSt;

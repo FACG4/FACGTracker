@@ -4,17 +4,17 @@ const favicon = require('serve-favicon');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
-const controllers = require('./controllers/index');
 const passport = require('passport');
 
+const controllers = require('./controllers/index');
+const helpers = require('./views/helpers/index');
 
-//dont remove it pleeeeease
+// to set up the passport configerations dont remove it pleeeeease
 const passportSetup = require('./controllers/passport-setup');
 
 require('env2')('./config.env');
 
 const app = express();
-
 
 // set up session cookies
 app.use(cookieSession({
@@ -25,9 +25,6 @@ app.use(cookieSession({
 // initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
-
-
-const helpers = require('./views/helpers/index');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');

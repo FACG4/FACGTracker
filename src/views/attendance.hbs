@@ -1,6 +1,7 @@
+{{>asidebar}}
 <section class="attendance">
     <form action="/attendance" method="POST">
-    <table class="attendance-table">
+    <table class="attendance-table" id="attendanceTable">
       <tr>
         <th>Name</th>
         <th>Status</th>
@@ -8,8 +9,9 @@
         <th>Clock Out</th>
       </tr>
       {{#each students}}
-      <tr class="studentData">
-        <td id="fullName" class="{{this.id}}">{{this.first_name}} {{this.last_name}}</td>
+      {{#if this.day_id}}
+      <tr class="studentData exist">
+        <td id="fullName" class="{{this.user_id}}">{{this.first_name}} {{this.last_name}}</td>
         <td>
           <select id="attend">
             <option value="present">Present</option>
@@ -17,14 +19,34 @@
           </select>
         </td>
         <td>
-          <input id="clockIn" type="time" name="clockIn" value="09:00">
+          <input id="clockIn" type="time" name="clockIn" value="{{this.clock_in}}">
         </td>
         <td>
-          <input id="clockOut" type="time" name="clockOut" value="17:00">
+          <input id="clockOut" type="time" name="clockOut" value="{{this.clock_out}}">
+        </td>
+        <td>
+          <i class="fas fa-edit"></i>
         </td>
       </tr>
+      {{else}}
+      <tr class="studentData">
+        <td id="fullName" class="{{this.id}}">{{this.first_name}} {{this.last_name}}</td>
+        <td>
+          <select id="attend">
+            <option value="present">Present</option>
+            <option value="absent" selected>Absent</option>
+          </select>
+        </td>
+        <td>
+          <input id="clockIn" type="time" name="clockIn" value="">
+        </td>
+        <td>
+          <input id="clockOut" type="time" name="clockOut" value="">
+        </td>
+      </tr>
+      {{/if}}
       {{/each}}
     </table>
-      <input type="submit" value="Save" id="saveAttendanceBtn">
-      </form>
-  </section>
+    <input type="submit" value="Save" class="attendance-save-button" id="saveAttendanceBtn">
+  </form>
+</section>
