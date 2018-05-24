@@ -2,7 +2,7 @@ const dbConnections = require('../db_connection');
 const getPresentStudent = require('./get_present_students');
 
 const abcentStudents = (cb) => {
-  const sql = 'SELECT id FROM users ;';
+  const sql = 'SELECT id FROM users WHERE role = \'student\';';
   dbConnections.query(
     sql,
     (err, res) => {
@@ -20,6 +20,5 @@ const abcentStudents = (cb) => {
     },
   );
 };
-
 
 module.exports = abcentStudents;

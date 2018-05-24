@@ -4,18 +4,7 @@ const getLateStudent = require('../model/quires/get_late_students');
 const getLeaveStudent = require('../model/quires/get_leave_students');
 const getWeekMentors = require('../model/quires/get_week_mentors');
 const getWeekworkshops = require('../model/quires/get_workshops');
-
-
-const getRightFormatDate = () => {
-  const dateObj = new Date();
-  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const dayName = days[dateObj.getDay()];
-  const month = dateObj.getUTCMonth() + 1; // months from 1-12
-  const day = dateObj.getUTCDate();
-  const year = dateObj.getUTCFullYear();
-  const newdate = `${year}/${month}/${day}, ${dayName}`;
-  return newdate;
-};
+const formatDate = require('./format_date');
 
 
 exports.get = (req, res) => {
@@ -32,7 +21,7 @@ exports.get = (req, res) => {
             getWeekworkshops((getWeekworkshopsErr, getWeekworkshopsResult) => {
               if (getWeekworkshopsErr) return res.status(500);
               return res.render('home', {
-                my_date: getRightFormatDate(),
+                my_date: formatDate.getRightFormatDate().newdate,
                 presentSts: getPresentStudentResult,
                 absentSts: getAbsentStudentResult,
                 lateSts: getLateStudentResult,
@@ -40,7 +29,7 @@ exports.get = (req, res) => {
                 weekMentors: getWeekMentorsResult,
                 weekWorkshops: getWeekworkshopsResult,
                 weekWorkshops1: getWeekworkshopsResult[0],
-                style: 'home_style.css',
+                style: ['home_style.css'],
                 script: 'home_dom.js',
               });
             });

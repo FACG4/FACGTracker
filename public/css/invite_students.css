@@ -4,6 +4,106 @@
   box-sizing: border-box;
 }
 
+main {
+  display: flex;
+}
+
+input[type=email] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  font-size: 16px;
+  width: 20%;
+  padding: 10px 18px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+  font-size: 16px;
+  width: 20%;
+  padding: 10px 18px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: px;
+  background: #adaaaa;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  margin-top: 50px;
+  padding-left: 20px;
+  width: 69%;
+  max-width: 800px;
+}
+
+.container h1 {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.invite-by-email {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.invite-by-email label {
+  position: absolute;
+  right: -5000px;
+}
+
+.unregistered-emails {
+  list-style: none;
+}
+
+.unregistered-emails h2 {
+  font-weight: normal;
+  font-size: 22px;
+}
+
+.unregistered-emails li {
+  margin-top: 15px;
+  border-bottom: 1px solid blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.unregistered-emails button[name='delete'] {
+  margin: 3px;
+  background-color: #ec4141;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  font-weight: bold;
+}
+
+.unregistered-emails button[name='delete']:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid #e62f2f;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  font-weight: bold;
+}
+
 img {
   width: 30px;
   height: 30px;
@@ -42,11 +142,12 @@ section {
 }
 
 .container_avatar_sidenavbar_style {
-  /* display: table-cell; */
   background-color: #F6F6F6;
-  width: 250px;
+  width: 30%;
   height: 100vh;
   padding: 16px;
+  min-width: 200px;
+  max-width: 300px;
 }
 
 .item_sidenav_style {
@@ -54,7 +155,8 @@ section {
   padding: 10px;
   color: #201d1e;
 }
-.item_sidenav_style:hover{
+
+.item_sidenav_style:hover {
   color: #a6969c;
   cursor: pointer;
 }
@@ -88,12 +190,6 @@ section {
   padding: 10px;
 }
 
-.container {
-  display: table-cell;
-  width: 90%;
-  vertical-align: top;
-}
-
 .contaner_user_profile_style {
   margin: 10px 0;
   width: 100%;
@@ -102,27 +198,6 @@ section {
 
 .img_name_style {
   float: left;
-}
-
-.contaner_user_profile_style button[name='profile'] {
-  margin: 3px;
-  background-color: #4c59af;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 5px;
-  width: 100px;
-  height: 30px;
-  font-weight: bold;
-}
-
-.contaner_user_profile_style button[name='profile']:hover {
-  background-color: white;
-  color: black;
-  border: 2px solid #4c59af;
-  border-radius: 5px;
-  width: 100px;
-  height: 30px;
 }
 
 .contaner_user_profile_style button[name='delete'] {

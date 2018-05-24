@@ -1,16 +1,51 @@
-const get = require('../model/quires/get');
-const post = require('../model/quires/post');
+const attendanceQueries = require('../model/quires/attendance_queries');
 
 exports.get = (req, res) => {
-  get.getStudentsInfo((err, students) => {
-    res.render('attendance', { students });
+  attendanceQueries.getAttendanceInfo(1, '2018-05-20', (err, students) => {
+    res.render('attendance', { students, style: ['home_style.css', 'attendance.css'], script: 'main.js' });
   });
 };
 
-// under dev
+const cohortId = 1;
+const date = '2018-05-20';
+exports.insert = (req, res) => {
+  const {
+    id, clockIn, clockOut,
+  } = req.body;
+  attendanceQueries.saveAttendance(id, clockIn, clockOut, cohortId, date, (err, info) => {
+    if (err) {
+      console.log('err', err);
+    } else {
+      console.log('saved');
+    }
+  });
+};
 
-// exports.post = (req, res) => {
-//   post.getAttendanceInfo(1, (err, info) => {
-//     console.log('info', info);
-//   });
-// };
+exports.update = (req, res) => {
+  const {
+    id, clockIn, clockOut,
+  } = req.body;
+  const userId = Number(id);
+  attendanceQueries.updateAttendance(clockIn, clockOut, cohortId, date, userId, (err, res) => {
+    if (err) {
+      console.log('err', err);
+    } else {
+      console.log('worked');
+    }
+  });
+};
+
+exports.delete = (req, res) => {
+  const {
+    id
+  } = req.body;
+  const userId = Number(id);
+  attendanceQueries.deleteAttendance(cohortId, date, userId, (err, result) => {
+    if (err) {
+      console.log('deleteErr', err);
+    } else {
+      console.log('deleted');
+    }
+  });
+};
+
