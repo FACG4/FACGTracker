@@ -3,6 +3,7 @@ const GitHubStrategy = require('passport-github').Strategy;
 const request = require('request');
 const insertUser = require('../model/quires/insert_user');
 const checkuser = require('../model/quires/check_user');
+const selectUserId = require('../model/quires/select_user_id');
 require('env2')('./config.env');
 
 passport.serializeUser((user, done) => {
@@ -38,12 +39,14 @@ passport.use(new GitHubStrategy(
           if (!result.rows.length) {
             console.log('not allowed to log in , his email is not in database');
             done(null, false, { message: 'Incorrect username.' });
-
           } else {
             insertUser.insertUsers(profile.username, profile._json.bio, profile._json.avatar_url, info[0].email, (err, result) => {
               //             // handel error
             });
-            done(null, profile.id);
+            selectUserId.selectUserId(info[0].email, (err, result) => {
+              //             // handel error
+              done(null, result.rows[0].id);
+            });
           }
         });
       }

@@ -10,7 +10,10 @@
   {{>footer}}
   <script type='text/javascript' src='/js/logic.js'></script>
   {{#if script}}
-    <script type='text/javascript' src='/js/{{script}}'></script>
+  {{#each script}}
+    <script type='text/javascript' src='/js/{{this}}'>
+    </script>
+  {{/each}}
   {{/if}}
 </body>
 </html>

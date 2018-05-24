@@ -1,8 +1,6 @@
 const { google } = require('googleapis');
 const inviteStudent = require('../model/quires/invite_student');
 require('env2')('./config.env');
-console.log(process.env);
-
 
 const oauth2Client = new google.auth.OAuth2(
   process.env.GMAILCLIENTID,
@@ -24,9 +22,10 @@ exports.get = (req, res) => {
     if (err) {
       console.error('get unregistered students', err);
     }
-    res.render('inviteSt', { emails, style: ['manage_student_style.css'], script: 'manage_st_dom.js' });
+    res.render('inviteSt', { emails, style: ['manage_student_style.css', 'invite_students.css'], script: ['manage_st_dom.js', 'invite_st.js'] });
   });
 };
+
 exports.getcode = (req, res) => {
   studentEmail = req.body.studentEmail;
   res.redirect(url);
