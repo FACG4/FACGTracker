@@ -1,48 +1,5 @@
 <section class="home_body_style">
-  <div class="container_avatar_sidenavbar_style">
-    <img id="cf_avatar" class="cf_avatar_style" src="/images/cf_avatar.png" alt="cf avatar">
-    <div class="name_cohort_style">
-      <label for="cf_name">WELCOME Ahmed Ajour</label>
-      <label for="cohort_name">FACG4</label>
-    </div>
-
-    <div class="container_sidenavbar_style">
-      <div id="home" class="item_sidenav_style">Home</div>
-      <hr>
-      <div id="attendance" class="item_sidenav_style">Take attendance</div>
-      <hr>
-      <div id="reports" class="item_sidenav_style">Reports <i class="icon fa fa-sort-down"></i>
-        <div class="disable">
-          <hr>
-          <div>
-            <a class="item_sidenav_style" href="/weeklyReport">Weekly report</a>
-          </div>
-          <hr>
-          <div>
-            <a class="item_sidenav_style" href="/monthlyReport">Monthly report</a>
-          </div>
-        </div>
-      </div>
-      <hr>
-      <div id="students" class="item_sidenav_style">Students <i class="icon fa fa-sort-down"></i>
-        <div class="disable1">
-          <hr>
-          <div>
-            <a class="item_sidenav_style" href="/manageSt">Manage students</a>
-          </div>
-          <hr>
-          <div>
-            <a class="item_sidenav_style" href="/inviteSt">Invite a student</a>
-          </div>
-        </div>
-      </div>
-      <hr>
-      <div class="item_sidenav_style">Cirriculum</div>
-      <hr>
-      <div class="item_sidenav_style">Complaints and suggestions</div>
-    </div>
-
-  </div>
+  {{>asidebar}}
   <div class="no_padding">
     <div class="current_date_style">
       <label for="date">{{my_date}}</label>
@@ -73,7 +30,6 @@
           </tr>
         {{/each}}
       </table>
-
       <table>
         <tr class="title_style">
           <th>Week in progress : week{{weekWorkshops1.week_no}} ( {{weekWorkshops1.name}} )</th>
