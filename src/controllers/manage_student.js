@@ -7,16 +7,14 @@ exports.get = (req, res) => {
     if (getStNamesErr) return res.status(500);
     res.render('manage_student', {
       names: getStNamesResult,
-      style: 'manage_student_style.css',
-      script: 'manage_st_dom.js',
+      style: ['manage_student_style.css'],
+      script: ['manage_st_dom.js'],
     });
   });
 };
 
 exports.delete = (req, res) => {
-  if (req.body.id) {
-    deleteStudent(req.body.id, (deleteStudentErr) => {
-      if (deleteStudentErr) return res.status(500);
-    });
-  }
+  deleteStudent(req.body.id, (deleteStudentErr) => {
+    if (deleteStudentErr) return res.status(500);
+  });
 };
