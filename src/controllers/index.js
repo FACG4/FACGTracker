@@ -28,4 +28,5 @@ router.get('/inviteSt', invite.get);
 router.post('/invitebygmail', invite.getcode);
 router.get('/gmail/cb', invite.gettoken);
 
+
 module.exports = router;

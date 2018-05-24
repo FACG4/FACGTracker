@@ -12,7 +12,7 @@ const executeQuery = (sql, cb) => {
 
 const getunregisteredStudents = (cohortId, cb) => {
   const sql = {
-    text: "SELECT email FROM users WHERE cohort_id = $1 AND role = 'student' AND github_username is NULL",
+    text: "SELECT email, id FROM users WHERE cohort_id = $1 AND role = 'student' AND github_username is NULL",
     values: [cohortId],
   };
   executeQuery(sql, cb);
@@ -34,8 +34,17 @@ const insertInviteEmail = (email, role, cohortId, cb) => {
   executeQuery(sql, cb);
 };
 
+const deleteUser = (userId, cb) => {
+  const sql = {
+    text: 'DELETE FROM users WHERE id = $1',
+    values: [userId]
+  };
+  executeQuery(sql, cb);
+};
+
 module.exports = {
   getunregisteredStudents,
   insertInviteEmail,
-  checkInviteEmail
+  checkInviteEmail,
+  deleteUser
 };
