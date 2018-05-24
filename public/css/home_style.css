@@ -16,10 +16,6 @@ label {
   text-align: center;
 }
 
-a {
-  text-decoration: none;
-}
-
 hr {
   border-color: #FCFCFC;
   display: block;
@@ -75,54 +71,6 @@ tr.subtitle2_style {
   font-size: 13px;
 }
 
-label[for='title_studen_tracker'] {
-  width: 100%;
-  font-size: 25px;
-  color: #4F4F4F;
-  display: block;
-  margin: 20px 0 0 0;
-}
-
-.icon {
-  float: right;
-}
-
-.container_avatar_sidenavbar_style {
-  display: table-cell;
-  background-color: #F6F6F6;
-  width: 220px;
-  height: 100vh;
-  padding: 16px;
-}
-
-.cf_avatar_style {
-  border-radius: 50%;
-}
-
-.item_sidenav_style {
-  font-weight: bold;
-  padding: 10px;
-  color: #201d1e;
-}
-
-.item_sidenav_style:hover {
-  color: #a6969c;
-  cursor: pointer;
-}
-
-.current_date_style {
-  display: block;
-}
-
-.student_tracker {
-  display: flex;
-  justify-content: center;
-}
-
-.student_tracker_titles {
-  display: flex;
-  justify-content: center;
-}
 
 .container_tables {
   display: flex;
@@ -130,95 +78,9 @@ label[for='title_studen_tracker'] {
   margin: 30px 0;
 }
 
-.student_tracker_titles label[for='title_tracking_style'] {
-  width: 80px;
-  height: 25px;
-  line-height: 30px;
-  margin: 0 10px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #4F4F4F;
-}
-
-.student_tracker label[for='presentSt'] {
-  width: 80px;
-  height: 25px;
-  background-color: #4bab33;
-  color: white;
-  line-height: 30px;
-  margin: 10px;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.student_tracker label[for='absentSt'] {
-  width: 80px;
-  height: 25px;
-  background-color: #d43535;
-  color: white;
-  line-height: 30px;
-  margin: 10px;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.student_tracker label[for='lateSt'] {
-  width: 80px;
-  height: 25px;
-  background-color: #4285be;
-  color: white;
-  line-height: 30px;
-  margin: 10px;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.student_tracker label[for='leaveSt'] {
-  width: 80px;
-  height: 25px;
-  background-color: #616f5c;
-  color: white;
-  line-height: 30px;
-  margin: 10px;
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.current_date_style label[for='date'] {
-  text-align: left;
-  width: 100%;
-  color: #9a385a;
-  font-size: 30px;
-  margin: 10px 0;
-}
-
 .home_body_style {
   background-color: #FAFAFA;
 }
-
-.disable {
-  display: none
-}
-
-.disable1 {
-  display: none
-}
-
-.name_cohort_style {
-  display: block;
-  text-align: center;
-  width: 100%;
-  margin: 10px 0 20px 0;
-}
-
-.name_cohort_style label[for='cohort_name'] {
-  margin: 10px;
-}
-
 .no_padding {
   display: table-cell;
   height: 100vh;

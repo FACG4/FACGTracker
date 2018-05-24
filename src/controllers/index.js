@@ -10,7 +10,6 @@ const logout = require('./logout.js');
 const isAuthenticated = require('./check-outh.js');
 
 router.get('/', home.get);
-router.get('/', isAuthenticated.isAuthenticated, home.get);
 router.get('/manageSt', isAuthenticated.isAuthenticated, manageSt.get);
 router.post('/deleteStudent', isAuthenticated.isAuthenticated, manageSt.delete);
 router.get('/attendance', isAuthenticated.isAuthenticated, attendance.get);

@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  width: 35%;
+  margin: 10px auto;
+}
+
+footer {
+  bottom: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer {
+  width: 100%;
+  background-color: black;
+  text-align: center;
+  bottom: 0;
+  margin: 0;
+}
+
+.footer p {
+  padding: 5px;
+  color: #d8d1ee;
+  font-size: 12px;
+}
+
+.footerfa {
+  margin: 0px 20px;
+}
+
+.current_date_style label[for='date'] {
+  text-align: left;
+  width: 100%;
+  color: #9a385a;
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+label[for='title_studen_tracker'] {
+  width: 100%;
+  font-size: 25px;
+  color: #4F4F4F;
+  display: block;
+  margin: 20px 0 0 0;
+}
+
+.student_tracker_titles {
+  display: flex;
+  justify-content: center;
+}
+
+.student_tracker_titles label[for='title_tracking_style'] {
+  width: 80px;
+  height: 25px;
+  line-height: 30px;
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #4F4F4F;
+}
+
+.student_tracker label[for='presentSt'] {
+  width: 80px;
+  height: 25px;
+  background-color: #4bab33;
+  color: white;
+  line-height: 30px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.student_tracker label[for='absentSt'] {
+  width: 80px;
+  height: 25px;
+  background-color: #d43535;
+  color: white;
+  line-height: 30px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.student_tracker label[for='lateSt'] {
+  width: 80px;
+  height: 25px;
+  background-color: #4285be;
+  color: white;
+  line-height: 30px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.student_tracker label[for='leaveSt'] {
+  width: 80px;
+  height: 25px;
+  background-color: #616f5c;
+  color: white;
+  line-height: 30px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
