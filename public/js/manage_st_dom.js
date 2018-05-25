@@ -35,7 +35,6 @@ if (bigDiv) {
         });
     } else if (e.target.textContent === 'View profile') {
       window.location.href = `/viewProfile/${e.target.parentElement.id}`;
-      // window.location.href = '/viewProfile';
     }
   });
 }

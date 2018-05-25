@@ -5,8 +5,8 @@ const formatDate = require('./format_date');
 const dateToday = formatDate.getRightFormatDate().newdate.split(',')[1];
 
 exports.get = (req, res) => {
-  attendanceQueries.getAttendanceInfo(1, '2018-05-20', (err, students) => {
-    trackBoxQueries.getTrackBoxInfo(dateToday, (err, result) => {
+  attendanceQueries.getAttendanceInfo(1, '2018-05-20', (attendanceErr, students) => {
+    trackBoxQueries.getTrackBoxInfo(dateToday, (trackBoxQueriesErr, result) => {
       res.render('attendance', {
         my_date: formatDate.getRightFormatDate().newdate,
         presentSts: result.presentSts,

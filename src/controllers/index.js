@@ -7,21 +7,23 @@ const manageSt = require('./manage_student');
 const viewProfile = require('./view_profile');
 const passport = require('passport');
 const logout = require('./logout.js');
-const { isAuthenticated } = require('./check-outh.js');
+const {
+  isAuthenticated
+} = require('./check-outh.js');
 
-router.get('/', home.get)
-  .get('/manageSt', manageSt.get)
-  .post('/deleteStudent', manageSt.delete)
-  .get('/attendance', attendance.get)
+router.get('/', isAuthenticated, home.get)
+  .get('/manageSt', isAuthenticated, manageSt.get)
+  .post('/deleteStudent', isAuthenticated, manageSt.delete)
+  .get('/attendance', isAuthenticated, attendance.get)
   .post('/attendance/insert', attendance.insert)
   .get('/logout', logout.get)
-  .post('/attendance/update', attendance.update)
-  .post('/attendance/delete', attendance.delete)
-  .get('/inviteSt', invite.get)
+  .post('/attendance/update', isAuthenticated, attendance.update)
+  .post('/attendance/delete', isAuthenticated, attendance.delete)
+  .get('/inviteSt', isAuthenticated, invite.get)
   .post('/invitebygmail', invite.getcode)
   .get('/gmail/cb', invite.gettoken)
   .get('/login', githubLogin.get)
-  .get('/viewProfile/:id', viewProfile.get)
+  .get('/viewProfile/:id', isAuthenticated, viewProfile.get)
   .get('/github', githubLogin.githubInteract)
   .get('/github/cb', passport.authenticate('github', {
     successReturnToOrRedirect: '/',

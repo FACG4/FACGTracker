@@ -1,5 +1,4 @@
 const unregisteredUl = document.querySelector('.unregistered-emails');
-
 unregisteredUl.addEventListener('click', (e) => {
   if (e.target.name === 'delete') {
     const data = JSON.stringify({ id: e.target.id });
@@ -12,7 +11,11 @@ unregisteredUl.addEventListener('click', (e) => {
     })
       .then((willDelete) => {
         if (willDelete) {
+          swal('Poof! student has been deleted!', {
+            icon: 'success',
+          });
           fetch('/deleteStudent', {
+            credentials: 'same-origin',
             headers: {
               'content-type': 'application/json',
             },
@@ -23,9 +26,6 @@ unregisteredUl.addEventListener('click', (e) => {
             .catch((err) => {
               console.log('There has been an error in delete student', err);
             });
-          swal('Poof! student has been deleted!', {
-            icon: 'success',
-          });
           e.target.parentElement.remove();
         }
       });
