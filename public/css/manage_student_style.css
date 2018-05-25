@@ -4,12 +4,6 @@
   box-sizing: border-box;
 }
 
-img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-}
-
 label {
   display: inline;
   font-weight: bold;
@@ -37,49 +31,14 @@ section {
   display: table;
 }
 
-.icon {
-  float: right;
-}
-
-.container_avatar_sidenavbar_style {
-  /* display: table-cell; */
-  background-color: #F6F6F6;
-  width: 250px;
-  height: 100vh;
-  padding: 16px;
-}
-
-.item_sidenav_style {
-  font-weight: bold;
-  padding: 10px;
-  color: #201d1e;
-}
-.item_sidenav_style:hover{
-  color: #a6969c;
-  cursor: pointer;
+.student_photo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 .home_body_style {
   background-color: #FAFAFA;
-}
-
-.disable {
-  display: none
-}
-
-.disable1 {
-  display: none
-}
-
-.name_cohort_style {
-  display: block;
-  text-align: center;
-  width: 100%;
-  margin: 10px 0 20px 0;
-}
-
-.name_cohort_style label[for='cohort_name'] {
-  margin: 10px;
 }
 
 .divs_style {
@@ -90,7 +49,7 @@ section {
 
 .container {
   display: table-cell;
-  width: 90%;
+  width: 70%;
   vertical-align: top;
 }
 
@@ -148,14 +107,6 @@ section {
 
 .float_buttons_style {
   float: right;
-}
-
-.cf_avatar_style {
-  display: block;
-  width: 77px;
-  height: 77px;
-  margin: 10px auto;
-  border-radius: 50%;
 }
 
 .user_name_style {

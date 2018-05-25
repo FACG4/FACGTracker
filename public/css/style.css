@@ -1,21 +1,90 @@
 * {
-  margin: 0;
-  padding: 0;
+  padding: 0px;
+  margin: 0px;
 }
 
-img {
+label {
+  display: inline;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+
+a {
+  font-weight: bold;
+  color: #201d1e;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a6969c;
+  cursor: pointer;
+}
+
+hr {
+  border-color: #FCFCFC;
+  display: block;
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
+.icon {
+  float: right;
+}
+
+.container_avatar_sidenavbar_style {
+  display: table-cell;
+  background-color: #F6F6F6;
+  width: 30%;
+  height: 100vh;
+  padding: 16px;
+}
+
+.cf_avatar_style {
   display: block;
   width: 35%;
   margin: 10px auto;
+  border-radius: 50%;
+}
+
+.item_sidenav_style {
+  font-weight: bold;
+  color: #201d1e;
+  padding: 10px;
+}
+
+.item_sidenav_style:hover {
+  color: #a6969c;
+  cursor: pointer;
+}
+
+.disable {
+  display: none
+}
+
+.disable1 {
+  display: none
+}
+
+.name_cohort_style {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 10px 0 20px 0;
+}
+
+.name_cohort_style label[for='cohort_name'] {
+  margin: 10px;
 }
 
 footer {
   bottom: 0;
   margin: 0;
-}
-
-a {
-  text-decoration: none;
 }
 
 .footer {
@@ -50,6 +119,11 @@ label[for='title_studen_tracker'] {
   color: #4F4F4F;
   display: block;
   margin: 20px 0 0 0;
+}
+
+.student_tracker {
+  display: flex;
+  justify-content: center;
 }
 
 .student_tracker_titles {

@@ -22,7 +22,7 @@ exports.get = (req, res) => {
     if (err) {
       console.error('get unregistered students', err);
     }
-    res.render('inviteSt', { emails, style: ['manage_student_style.css', 'invite_students.css'], script: ['manage_st_dom.js', 'invite_st.js'] });
+    res.render('inviteSt', { emails, style: ['manage_student_style.css', 'invite_students.css'], script: ['manage_st_dom.js', 'invite_st.js', 'home_dom.js'] });
   });
 };
 

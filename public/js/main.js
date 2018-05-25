@@ -69,3 +69,12 @@ saveAttendanceBtn.addEventListener('click', (e) => {
     tr.classList.remove('changed');
   });
 });
+
+// window.addEventListener('load', () => {
+//   fetch('/', {
+//     headers: { 'content-type': 'application/json' },
+//     method: 'POST',
+//     body: data
+//   })
+//     .then(res => res.json());
+// });
