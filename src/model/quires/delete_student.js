@@ -8,9 +8,11 @@ const deleteStudent = (studentId, cb) => {
   };
   dbConnections.query(
     sql,
-    (err) => {
+    (err, result) => {
       if (err) {
         cb(err);
+      } else {
+        cb(null, result);
       }
     },
   );

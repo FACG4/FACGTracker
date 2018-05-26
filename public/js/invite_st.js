@@ -11,10 +11,7 @@ unregisteredUl.addEventListener('click', (e) => {
     })
       .then((willDelete) => {
         if (willDelete) {
-          swal('Poof! student has been deleted!', {
-            icon: 'success',
-          });
-          fetch('/deleteStudent', {
+          return fetch('/deleteStudent', {
             credentials: 'same-origin',
             headers: {
               'content-type': 'application/json',
@@ -22,11 +19,21 @@ unregisteredUl.addEventListener('click', (e) => {
             method: 'POST',
             body: data
           })
-            .then(console.log)
+            .then(res => res.json())
+            .then((res) => {
+              if (res.err) {
+                swal('Oh noes!', `${res.msg}`, 'error')
+                  .then(() => { location.reload(); });
+              } else {
+                swal(`Poof! student ${res.msg}`, {
+                  icon: 'success',
+                });
+                e.target.parentElement.remove();
+              }
+            })
             .catch((err) => {
               console.log('There has been an error in delete student', err);
             });
-          e.target.parentElement.remove();
         }
       });
   }

@@ -1,7 +1,8 @@
 const saveAttendanceBtn = document.getElementById('saveAttendanceBtn');
 const attendanceTable = document.getElementById('attendanceTable');
 
-attendanceTable.addEventListener('change', (e) => {
+attendanceTable.addEventListener('input', (e) => {
+  console.log('working');
   e.target.parentElement.parentElement.classList.add('changed');
   if (e.target.name === 'clockIn') {
     const select = e.target.parentElement.parentElement.querySelector('select');
@@ -35,6 +36,7 @@ saveAttendanceBtn.addEventListener('click', (e) => {
 
     if (attend.value === 'absent') {
       fetch('/attendance/delete', {
+        credentials: 'same-origin',
         headers: { 'content-type': 'application/json' },
         method: 'POST',
         body: data
@@ -46,6 +48,7 @@ saveAttendanceBtn.addEventListener('click', (e) => {
     } else {
       if (tr.classList.contains('changed') && tr.classList.contains('exist')) {
         fetch('/attendance/update', {
+          credentials: 'same-origin',
           headers: { 'content-type': 'application/json' },
           method: 'POST',
           body: data,
@@ -56,6 +59,7 @@ saveAttendanceBtn.addEventListener('click', (e) => {
           });
       } else {
         fetch('/attendance/insert', {
+          credentials: 'same-origin',
           headers: { 'content-type': 'application/json' },
           method: 'POST',
           body: data,
