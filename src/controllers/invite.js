@@ -2,10 +2,17 @@ const { google } = require('googleapis');
 const inviteStudent = require('../model/quires/invite_student');
 require('env2')('./config.env');
 
+let gmailCallbackURL = '';
+if (process.env.ENV_VAR) {
+  gmailCallbackURL = 'http://localhost:3000/gmail/cb';
+} else {
+  gmailCallbackURL = 'https://facgtracker.herokuapp.com/gmail/cb';
+}
+
 const oauth2Client = new google.auth.OAuth2(
   process.env.GMAILCLIENTID,
   process.env.GMAILSECRETE,
-  'http://localhost:3000/gmail/cb'
+  gmailCallbackURL
 );
 const scopes = [
   'https://www.googleapis.com/auth/gmail.send'
@@ -41,7 +48,7 @@ exports.gettoken = (req, res) => {
       console.log('checkInviteEmail', exist);
       res.redirect('/inviteSt');
     } else {
-      const githubloginLink = 'http://localhost:3000/github';
+      const githubloginLink = 'https://facgtracker.herokuapp.com/login';
       oauth2Client.getToken(req.query.code, (err, tokens) => {
         console.log('tokens', tokens);
         oauth2Client.setCredentials(tokens);
