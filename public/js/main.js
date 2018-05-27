@@ -1,5 +1,6 @@
 const saveAttendanceBtn = document.getElementById('saveAttendanceBtn');
 const attendanceTable = document.getElementById('attendanceTable');
+const datePicker = document.getElementById('datePicker');
 
 attendanceTable.addEventListener('input', (e) => {
   console.log('working');
@@ -12,6 +13,21 @@ attendanceTable.addEventListener('input', (e) => {
       select.value = 'present';
     }
   }
+});
+
+datePicker.addEventListener('input', () => {
+  const date = datePicker.value;
+  console.log(date);
+
+  fetch(`/attendance?date=${date}`, {
+    credentials: 'same-origin',
+    headers: { 'content-type': 'application/json' },
+    method: 'GET'
+  })
+    .then((res) => {
+      window.location = res.url;
+    })
+    .catch(err => console.log('something err happend', err));
 });
 
 saveAttendanceBtn.addEventListener('click', (e) => {
@@ -32,6 +48,7 @@ saveAttendanceBtn.addEventListener('click', (e) => {
       attend: attend.value,
       clockIn: clockIn.value,
       clockOut: clockOutValue,
+      date: datePicker.value || Date.now()
     });
 
     if (attend.value === 'absent') {
