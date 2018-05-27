@@ -14,22 +14,31 @@ if (bigDiv) {
       })
         .then((willDelete) => {
           if (willDelete) {
-            swal('Poof! student has been deleted!', {
-              icon: 'success',
-            });
-            fetch('/deleteStudent', {
+            return fetch('/deleteStudent', {
               credentials: 'same-origin',
               headers: {
                 'content-type': 'application/json',
               },
               method: 'POST',
-              body: data,
+              body: data
             })
               .then(res => res.json())
+              .then((res) => {
+                if (res.err) {
+                  swal('Oh noes!', `${res.msg}`, 'error')
+                    .then(() => {
+                      location.reload();
+                    });
+                } else {
+                  swal(`Poof! student ${res.msg}`, {
+                    icon: 'success',
+                  });
+                  e.target.parentElement.parentElement.remove();
+                }
+              })
               .catch((err) => {
                 console.log('There has been an error in delete student', err);
               });
-            e.target.parentElement.parentElement.remove();
           } else {
             swal('Student is safe!');
           }

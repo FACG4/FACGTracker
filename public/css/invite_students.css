@@ -61,7 +61,7 @@ input[type=submit]:hover {
 
 .invite-by-email label {
   position: absolute;
-  right: -5000px;
+  left: -5000px;
 }
 
 .unregistered-emails {

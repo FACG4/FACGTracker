@@ -4,6 +4,7 @@
       "no-lonely-if": "off",
       "comma-dangle": "off",
       "no-undef": "off",
-      "consistent-return":"off"
+      "consistent-return":"off",
+      "no-else-return":"off"
     }
 }

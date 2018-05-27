@@ -21,7 +21,6 @@ exports.delete = (req, res) => {
     } else if (deleteStudentResult.rowCount === 0) {
       res.send({ msg: 'email does not exist in the database', err: true });
     } else {
-      console.log('deleteSt', deleteStudentResult);
       res.send({ msg: 'has been deleted!' });
     }
   });

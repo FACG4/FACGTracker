@@ -21,6 +21,10 @@ a:hover {
   cursor: pointer;
 }
 
+small {
+  color: white;
+}
+
 hr {
   border-color: #FCFCFC;
   display: block;
@@ -80,6 +84,7 @@ hr {
 
 .name_cohort_style label[for='cohort_name'] {
   margin: 10px;
+  display: block;
 }
 
 footer {
@@ -89,16 +94,12 @@ footer {
 
 .footer {
   width: 100%;
-  background-color: black;
   text-align: center;
-  bottom: 0;
-  margin: 0;
 }
 
-.footer p {
-  padding: 5px;
-  color: #d8d1ee;
-  font-size: 12px;
+p {
+  width: 200px;
+  text-align: center;
 }
 
 .footerfa {
@@ -195,15 +196,48 @@ label[for='title_studen_tracker'] {
   width: 50px;
   height: 50px;
   padding: 10px;
+  display: block;
 }
 
 .logo_style {
   width: 350px;
   height: 110px;
   float: left;
-  vertical-align: middle;
+  border-radius: 0;
 }
 
 .container_footer_style {
-  height: 120px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.styling_for_div {
+  width: 60%;
+  height: 110px;
+}
+
+.first_icons {
+  width: 100px;
+  display: inline-block;
+}
+
+.second_icons {
+  display: inline-block;
+  width: 200px;
+}
+
+.bottom_footer {
+  background: black;
+  width: 100%;
+}
+
+.top_footer {
+  background: white;
+  width: 100%;
+}
+
+.icon_style {
+  padding-right: 10px;
 }
