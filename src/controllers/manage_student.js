@@ -1,7 +1,6 @@
 const getStNames = require('../model/quires/get_students_names');
 const deleteStudent = require('../model/quires/delete_student');
 
-
 exports.get = (req, res) => {
   getStNames((getStNamesErr, getStNamesResult) => {
     if (getStNamesErr) return res.status(500);
@@ -14,7 +13,16 @@ exports.get = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  deleteStudent(req.body.id, (deleteStudentErr) => {
-    if (deleteStudentErr) return res.status(500);
+  deleteStudent(req.body.id, (deleteStudentErr, deleteStudentResult) => {
+    // if (deleteStudentErr) return res.status(500);
+    if (deleteStudentErr) {
+      console.log('deleteStudentErr', deleteStudentErr);
+      res.status(500);
+    } else if (deleteStudentResult.rowCount === 0) {
+      res.send({ msg: 'email does not exist in the database', err: true });
+    } else {
+      console.log('deleteSt', deleteStudentResult);
+      res.send({ msg: 'has been deleted!' });
+    }
   });
 };

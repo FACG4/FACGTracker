@@ -28,6 +28,7 @@ const presentSt = (date, cb) => {
 };
 
 const abcentStudents = (cb) => {
+  const date = formatDate.getRightFormatDate().newdate.split(',')[1];
   const sql = 'SELECT id FROM users WHERE role = \'student\';';
   dbConnections.query(
     sql,
@@ -87,7 +88,6 @@ const getTrackBoxInfo = (date, cb) => {
                     lateSts: leave.length,
                     leaveSts: late.length,
                   };
-                  console.log('allData', data);
                   cb(null, data);
                 }
               });

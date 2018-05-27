@@ -18,6 +18,7 @@ if (bigDiv) {
               icon: 'success',
             });
             fetch('/deleteStudent', {
+              credentials: 'same-origin',
               headers: {
                 'content-type': 'application/json',
               },
