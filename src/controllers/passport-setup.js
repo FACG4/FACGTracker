@@ -19,10 +19,10 @@ passport.deserializeUser((id, done) => {
 });
 
 let callbackURL = '';
-if (process.env.NODE && ~process.env.NODE.indexOf('heroku')) {
-  callbackURL = 'https://facgtracker.herokuapp.com/github/cb';
-} else {
+if (process.env.ENV_VAR) {
   callbackURL = 'http://localhost:3000/github/cb';
+} else {
+  callbackURL = 'https://facgtracker.herokuapp.com/github/cb';
 }
 
 passport.use(new GitHubStrategy(
