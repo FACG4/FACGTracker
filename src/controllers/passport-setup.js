@@ -39,14 +39,15 @@ passport.use(new GitHubStrategy(
         checkuser.checkuser(info[0].email, (err, result) => {
           if (!result.rows.length) {
             console.log('not allowed to log in , his email is not in database');
-            done(null, false, { message: 'Incorrect username.' });
+            done(null, { err: true, abd: 'potatoes' }, { message: 'Incorrect username.' });
+            // done(null, false, { message: 'Incorrect username.' });
           } else {
-            insertUser.insertUsers(profile.username, profile._json.bio, profile._json.avatar_url, info[0].email, (err, result) => {
-              //             // handel error
-            });
             selectUserId.selectUserId(info[0].email, (err, result) => {
               //             // handel error
               done(null, result.rows[0].id);
+            });
+            insertUser.insertUsers(profile.username, profile._json.bio, profile._json.avatar_url, info[0].email, (err, result) => {
+              //             // handel error
             });
           }
         });
