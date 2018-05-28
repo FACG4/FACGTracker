@@ -1,8 +1,8 @@
 const saveAttendanceBtn = document.getElementById('saveAttendanceBtn');
 const attendanceTable = document.getElementById('attendanceTable');
+const datePicker = document.getElementById('datePicker');
 
 attendanceTable.addEventListener('input', (e) => {
-  console.log('working');
   e.target.parentElement.parentElement.classList.add('changed');
   if (e.target.name === 'clockIn') {
     const select = e.target.parentElement.parentElement.querySelector('select');
@@ -12,6 +12,23 @@ attendanceTable.addEventListener('input', (e) => {
       select.value = 'present';
     }
   }
+});
+
+datePicker.addEventListener('input', () => {
+  const date = datePicker.value;
+  fetch(`/attendance?date=${date}`, {
+    credentials: 'same-origin',
+    headers: { 'content-type': 'application/json' },
+    method: 'GET'
+  })
+    .then((res) => {
+      window.location = res.url;
+    })
+    .catch((err) => {
+      console.log('something err happend', err);
+      swal('Oh no!', 'Some error happen, please try again', 'error')
+        .then(() => { window.location.reload(); });
+    });
 });
 
 saveAttendanceBtn.addEventListener('click', (e) => {
@@ -32,6 +49,7 @@ saveAttendanceBtn.addEventListener('click', (e) => {
       attend: attend.value,
       clockIn: clockIn.value,
       clockOut: clockOutValue,
+      date: datePicker.value || Date.now()
     });
 
     if (attend.value === 'absent') {
@@ -42,8 +60,21 @@ saveAttendanceBtn.addEventListener('click', (e) => {
         body: data
       })
         .then(res => res.json())
+        .then((res) => {
+          if (res.deleted) {
+            swal(`Poof! student ${res.msg}`, {
+              icon: 'success'
+            })
+              .then(() => window.location.reload());
+          } else {
+            swal('Oh noes!', `${res.msg}`, 'error')
+              .then(() => { window.location.reload(); });
+          }
+        })
         .catch((err) => {
-          console.log('There has been an error', err);
+          console.error('There has been an error', err);
+          swal('Oh no!', 'Some error happen, please try again', 'error')
+            .then(() => { window.location.reload(); });
         });
     } else {
       if (tr.classList.contains('changed') && tr.classList.contains('exist')) {
@@ -54,8 +85,21 @@ saveAttendanceBtn.addEventListener('click', (e) => {
           body: data,
         })
           .then(res => res.json())
+          .then((res) => {
+            if (res.updated) {
+              swal(`Poof! student ${res.msg}`, {
+                icon: 'success'
+              })
+                .then(() => window.location.reload());
+            } else {
+              swal('Oh noes!', `${res.msg}`, 'error')
+                .then(() => { window.location.reload(); });
+            }
+          })
           .catch((err) => {
             console.log('There has been an error', err);
+            swal('Oh no!', 'Some error happen, please try again', 'error')
+              .then(() => { window.location.reload(); });
           });
       } else {
         fetch('/attendance/insert', {
@@ -65,8 +109,21 @@ saveAttendanceBtn.addEventListener('click', (e) => {
           body: data,
         })
           .then(res => res.json())
+          .then((res) => {
+            if (res.inserted) {
+              swal(`Poof! student ${res.msg}`, {
+                icon: 'success'
+              })
+                .then(() => window.location.reload());
+            } else {
+              swal('Oh noes!', `${res.msg}`, 'error')
+                .then(() => { window.location.reload(); });
+            }
+          })
           .catch((err) => {
             console.log('There has been an error', err);
+            swal('Oh no!', 'Some error happen, please try again', 'error')
+              .then(() => { window.location.reload(); });
           });
       }
     }

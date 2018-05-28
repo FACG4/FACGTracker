@@ -4,17 +4,21 @@ const formatDate = require('./format_date');
 
 const dateToday = formatDate.getRightFormatDate().newdate.split(',')[1];
 
-exports.get = (req, res) => {
-  attendanceQueries.getAttendanceInfo(1, '2018-05-20', (err, students) => {
+exports.get = (req, res, next) => {
+  const date = req.query.date || dateToday;
+  attendanceQueries.getAttendanceInfo(1, date, (err, students) => {
     if (err) {
       console.log('gettAttendaceInfoErr', err);
+      next(err);
     } else {
-      trackBoxQueries.getTrackBoxInfo(dateToday, (err1, result) => {
-        if (err) {
+      trackBoxQueries.getTrackBoxInfo(date, (err1, result) => {
+        if (err1) {
           console.log('trackBoxErr', err1);
+          next(err1);
         } else {
+          const date2 = formatDate.getRightFormatDate2(date);
           res.render('attendance', {
-            my_date: formatDate.getRightFormatDate().newdate,
+            date: date2.todayDate,
             presentSts: result.presentSts,
             absentSts: result.absentSts,
             lateSts: result.lateSts,
@@ -30,44 +34,52 @@ exports.get = (req, res) => {
 };
 
 const cohortId = 1;
-const date = '2018-05-20';
-exports.insert = (req, res) => {
+exports.insert = (req, res, next) => {
   const {
-    id, clockIn, clockOut,
+    id, clockIn, clockOut
   } = req.body;
+  const { date } = req.body || Date.now();
   attendanceQueries.saveAttendance(id, clockIn, clockOut, cohortId, date, (err, info) => {
     if (err) {
       console.log('err', err);
+      next(err);
     } else {
       console.log('saved');
+      res.send({ inserted: true, msg: 'record is successfully inserted' });
     }
   });
 };
 
-exports.update = (req, res) => {
+exports.update = (req, res, next) => {
   const {
-    id, clockIn, clockOut,
+    id, clockIn, clockOut
   } = req.body;
+  const { date } = req.body || Date.now();
   const userId = Number(id);
-  attendanceQueries.updateAttendance(clockIn, clockOut, cohortId, date, userId, (err, res) => {
+  attendanceQueries.updateAttendance(clockIn, clockOut, cohortId, date, userId, (err, result) => {
     if (err) {
       console.log('err', err);
+      next(err);
     } else {
-      console.log('worked');
+      console.log('updated');
+      res.send({ updated: true, msg: 'record is successfully updated' });
     }
   });
 };
 
-exports.delete = (req, res) => {
+exports.delete = (req, res, next) => {
   const {
     id
   } = req.body;
+  const { date } = req.body || Date.now();
   const userId = Number(id);
   attendanceQueries.deleteAttendance(cohortId, date, userId, (err, result) => {
     if (err) {
       console.log('deleteErr', err);
+      next(err);
     } else {
       console.log('deleted');
+      res.send({ deleted: true, msg: 'record is successfully deleted' });
     }
   });
 };
