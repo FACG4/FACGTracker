@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, attendance, flags, feedbacks, weeks, week_mentors, days, workshops, suggestions_complaints, cohort CASCADE;
+DROP TABLE IF EXISTS cohort, users, weeks, days, attendance, flags, feedbacks, week_mentors, workshops, suggestions_complaints,  CASCADE;
 
 CREATE TABLE cohort(
   id SERIAL PRIMARY KEY,
@@ -85,7 +85,7 @@ INSERT INTO users (first_name, last_name, email, bio, phone, password, role, git
   ('Mohammad', 'Heila', 'a.heila@hotmail.com', 'Programming is a dream i live with it everyday', '0599944654', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'student', 'mheila', 1),
   ('Ahmed', 'M. Shatat', 'ahmed_m_sh@hotmail.com', 'SEO Master', '0599944633', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'student', 'shatat_m', 1),
   ('Farah', 'Zaqot', 'a.zaqot@hotmail.com', 'Great man', '0599944666', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'student', 'zfarah', 1),
-  (NULL, NULL, 'abdalsamad.y.m@gamil.com', NULL, NULL, NULL, DEFAULT, NULL, 1),
+  (NULL, NULL, 'abdalsamad.y.m@gmail.com', NULL, NULL, NULL, DEFAULT, NULL, 1),
   (NULL, NULL, 'anoos.haniioi@gmail.com', NULL, NULL, NULL, DEFAULT, NULL, 1),
   (NULL, NULL, 'blsam.2332016@gmail.com', NULL, NULL, NULL, DEFAULT, NULL, 1),
   ('Sultan', 'Asi', 'a.sultan@gmail.com', 'great mentor', '0599223456', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'mentor', 'sultanasi', NULL),
