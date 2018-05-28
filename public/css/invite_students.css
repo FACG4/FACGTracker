@@ -4,6 +4,96 @@
   box-sizing: border-box;
 }
 
+main {
+  display: flex;
+}
+
+.container {
+  margin:0 auto;
+  margin-top: 50px;
+  padding-left: 20px;
+  width: 69%;
+  max-width: 800px;
+}
+
+.container h1 {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.invite-by-email {
+  margin: 30px 0;
+}
+
+.invite-by-email label {
+  position: absolute;
+  right: -5000px;
+}
+
+.unregistered-emails {
+  list-style: none;
+}
+
+.unregistered-emails h2 {
+  font-weight: normal;
+  font-size: 22px;
+}
+
+.unregistered-emails li {
+  height: 36px;
+  margin-top: 15px;
+  border-bottom: 1px solid blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.unregistered-emails button[name='edit'] {
+  margin: 3px;
+  background-color: #4c59af;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  width: 45px;
+  height: 30px;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.unregistered-emails button[name='edit']:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #4c59af;
+  border-radius: 5px;
+  width: 45px;
+  height: 30px;
+  font-size: 10px;
+}
+
+.unregistered-emails button[name='delete'] {
+  margin: 3px;
+  background-color: #ec4141;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  width: 45px;
+  height: 30px;
+  font-size: 10px;
+}
+
+.unregistered-emails button[name='delete']:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid #e62f2f;
+  border-radius: 5px;
+  width: 45px;
+  height: 30px;
+  font-size: 10px;
+}
+
+/* asidebar style */
 img {
   width: 30px;
   height: 30px;
@@ -42,11 +132,12 @@ section {
 }
 
 .container_avatar_sidenavbar_style {
-  /* display: table-cell; */
   background-color: #F6F6F6;
-  width: 250px;
+  width: 30%;
   height: 100vh;
   padding: 16px;
+  min-width: 200px;
+  max-width: 300px;
 }
 
 .item_sidenav_style {
@@ -88,11 +179,6 @@ section {
   padding: 10px;
 }
 
-.container {
-  display: table-cell;
-  width: 90%;
-  vertical-align: top;
-}
 
 .contaner_user_profile_style {
   margin: 10px 0;
@@ -104,26 +190,7 @@ section {
   float: left;
 }
 
-.contaner_user_profile_style button[name='profile'] {
-  margin: 3px;
-  background-color: #4c59af;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 5px;
-  width: 100px;
-  height: 30px;
-  font-weight: bold;
-}
 
-.contaner_user_profile_style button[name='profile']:hover {
-  background-color: white;
-  color: black;
-  border: 2px solid #4c59af;
-  border-radius: 5px;
-  width: 100px;
-  height: 30px;
-}
 
 .contaner_user_profile_style button[name='delete'] {
   margin: 3px;

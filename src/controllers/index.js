@@ -2,17 +2,31 @@ const router = require('express').Router();
 const attendance = require('./attendance');
 const home = require('./home');
 const githubLogin = require('./github-login');
+const invite = require('./invite');
 const manageSt = require('./manage_student');
+const viewProfile = require('./view_profile');
+const passport = require('passport');
+const logout = require('./logout.js');
+const { isAuthenticated } = require('./check-outh.js');
 
+router.get('/', isAuthenticated, home.get)
+  .get('/manageSt', isAuthenticated, manageSt.get)
+  .post('/deleteStudent', isAuthenticated, manageSt.delete)
+  .get('/attendance', isAuthenticated, attendance.get)
+  .post('/attendance/insert', attendance.insert)
+  .get('/logout', logout.get)
+  .post('/attendance/update', isAuthenticated, attendance.update)
+  .post('/attendance/delete', isAuthenticated, attendance.delete)
+  .get('/inviteSt', isAuthenticated, invite.get)
+  .post('/invitebygmail', invite.getcode)
+  .get('/gmail/cb', invite.gettoken)
+  .get('/login', githubLogin.get)
+  .get('/viewProfile/:id', isAuthenticated, viewProfile.get)
+  .get('/github', githubLogin.githubInteract)
+  .get('/github/cb', passport.authenticate('github', {
+    successReturnToOrRedirect: '/',
+    failureRedirect: '/login',
+  }), githubLogin.githubCb);
 
-router.get('/login', githubLogin.get);
-router.get('/manageSt', manageSt.get);
-router.post('/deleteStudent', manageSt.delete);
-
-router.get('/github', githubLogin.githubInteract);
-router.get('/github/cb', githubLogin.githubInteract, githubLogin.githubCb);
-router.get('/', home.get);
-router.get('/attendance', attendance.get);
-// router.post('/attendance', attendance.post);
 
 module.exports = router;
