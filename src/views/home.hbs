@@ -1,24 +1,7 @@
 <section class="home_body_style">
   {{>asidebar}}
   <div class="no_padding">
-    <div class="current_date_style">
-      <label for="date">{{my_date}}</label>
-    </div>
-    <div>
-      <label for="title_studen_tracker">Daily Student Tracking</label>
-      <div class="student_tracker_titles">
-        <label for="title_tracking_style">Present</label>
-        <label for="title_tracking_style">Absent</label>
-        <label for="title_tracking_style">Late</label>
-        <label for="title_tracking_style">Leave</label>
-      </div>
-      <div class="student_tracker">
-        <label for="presentSt">{{presentSts}}</label>
-        <label for="absentSt">{{absentSts}}</label>
-        <label for="lateSt">{{lateSts}}</label>
-        <label for="leaveSt">{{leaveSts}}</label>
-      </div>
-    </div>
+    {{>trackBox}}
     <div class="container_tables">
       <table>
         <tr class="table_title_style">
@@ -31,7 +14,7 @@
         {{/each}}
       </table>
       <table>
-        <tr class="title_style">
+        <tr class="table_title_style">
           <th>Week in progress : week{{weekWorkshops1.week_no}} ( {{weekWorkshops1.name}} )</th>
         </tr>
         <tr class="subtitle_style">
@@ -48,5 +31,4 @@
       </table>
     </div>
   </div>
-
 </section>

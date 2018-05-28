@@ -1,7 +1,7 @@
 const dbConnections = require('../db_connection');
 
 const usersName = (cb) => {
-  const sql = 'SELECT id ,first_name , last_name FROM users WHERE role = \'student\';';
+  const sql = "SELECT * FROM users WHERE role = 'student'";
   dbConnections.query(
     sql,
     (err, res) => {

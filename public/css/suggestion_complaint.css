@@ -1,0 +1,31 @@
+section .suggestionComplaint{
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+
+}
+
+
+.container_avatar_sidenavbar_style{
+    width: 220px;
+}
+
+.innerDiv{
+
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

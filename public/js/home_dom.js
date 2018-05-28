@@ -20,11 +20,3 @@ students.addEventListener('click', () => {
     divDis2.classList.remove('disable1');
   }
 });
-const home = selector('#home');
-home.addEventListener('click', () => {
-  window.location.href = '/';
-});
-const attendance = selector('#attendance');
-attendance.addEventListener('click', () => {
-  window.location.href = '/attendance';
-});

@@ -1,14 +1,16 @@
 <div class="container_avatar_sidenavbar_style">
-  <a href="/logout">Logout</a>
+
   <img id="cf_avatar" class="cf_avatar_style" src="/images/cf_avatar.png" alt="cf avatar">
   <div class="name_cohort_style">
     <label for="cf_name">WELCOME Ahmed Ajour</label>
     <label for="cohort_name">FACG4</label>
   </div>
   <div class="container_sidenavbar_style">
-    <div id="home" class="item_sidenav_style">Home</div>
+    <a class="item_sidenav_style" href="/">Home</a>
     <hr>
-    <div id="attendance" class="item_sidenav_style">Take attendance</div>
+    <div class="item_sidenav_style">
+      <a href="/attendance">Take attendance</a>
+    </div>
     <hr>
     <div id="reports" class="item_sidenav_style">Reports
       <i class="icon fa fa-sort-down"></i>
@@ -40,6 +42,13 @@
     <hr>
     <div class="item_sidenav_style">Cirriculum</div>
     <hr>
-    <div class="item_sidenav_style">Complaints and suggestions</div>
+    <div>
+      <a class="item_sidenav_style" href="/suggestionComplaint">Complaints and suggestions</a>
+
+    </div>
+    <hr>
+    <div>
+      <a class="item_sidenav_style" href="/logout">Logout</a>
+    </div>
   </div>
 </div>

@@ -1,0 +1,247 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+label {
+  display: inline;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+
+a {
+  font-weight: bold;
+  color: #201d1e;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a6969c;
+  cursor: pointer;
+}
+
+small {
+  color: white;
+}
+
+hr {
+  border-color: #FCFCFC;
+  display: block;
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
+.icon {
+  float: right;
+}
+
+.container_avatar_sidenavbar_style {
+  display: table-cell;
+  background-color: #d6d1d1;
+  width: 20%;
+  height: 90vh;
+  padding: 16px;
+}
+
+.cf_avatar_style {
+  display: block;
+  width: 35%;
+  margin: 10px auto;
+  border-radius: 50%;
+}
+
+.item_sidenav_style {
+  font-weight: bold;
+  color: #201d1e;
+  padding: 10px;
+}
+
+.item_sidenav_style:hover {
+  color: #a6969c;
+  cursor: pointer;
+}
+
+.disable {
+  display: none
+}
+
+.disable1 {
+  display: none
+}
+
+.name_cohort_style {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 10px 0 20px 0;
+}
+
+.name_cohort_style label[for='cohort_name'] {
+  margin: 10px;
+  display: block;
+}
+
+footer {
+  bottom: 0;
+  margin: 0;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+}
+
+p {
+  width: 200px;
+  text-align: center;
+}
+
+.footerfa {
+  margin: 0px 20px;
+}
+
+.current_date_style label[for='date'] {
+  text-align: left;
+  width: 100%;
+  color: #9a385a;
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+label[for='title_studen_tracker'] {
+  width: 100%;
+  font-size: 25px;
+  color: #4F4F4F;
+  display: block;
+  margin: 20px 0 0 0;
+}
+
+.student_tracker {
+  display: flex;
+  justify-content: center;
+}
+
+.student_tracker_titles {
+  display: flex;
+  justify-content: center;
+}
+
+.student_tracker_titles label[for='title_tracking_style'] {
+  width: 80px;
+  height: 25px;
+  line-height: 30px;
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #4F4F4F;
+}
+
+.student_tracker label[for='presentSt'] {
+  width: 80px;
+  height: 25px;
+  background-color: #4bab33;
+  color: white;
+  line-height: 30px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.student_tracker label[for='absentSt'] {
+  width: 80px;
+  height: 25px;
+  background-color: #d43535;
+  color: white;
+  line-height: 30px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.student_tracker label[for='lateSt'] {
+  width: 80px;
+  height: 25px;
+  background-color: #4285be;
+  color: white;
+  line-height: 30px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.student_tracker label[for='leaveSt'] {
+  width: 80px;
+  height: 25px;
+  background-color: #616f5c;
+  color: white;
+  line-height: 30px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.icon_footer_style {
+  color: #24a3ff;
+  font-weight: normal;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  display: block;
+}
+
+.logo_style {
+  width: 350px;
+  height: 110px;
+  float: left;
+  border-radius: 0;
+}
+
+.container_footer_style {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.styling_for_div {
+  width: 60%;
+  height: 110px;
+}
+
+.first_icons {
+  width: 100px;
+  display: inline-block;
+}
+
+.second_icons {
+  display: inline-block;
+  width: 200px;
+}
+
+.bottom_footer {
+  background: black;
+  width: 100%;
+}
+
+.top_footer {
+  background: white;
+  width: 100%;
+}
+
+.icon_style {
+  padding-right: 10px;
+}
+.no_style {
+  margin: 0;
+}

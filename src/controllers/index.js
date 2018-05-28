@@ -5,9 +5,9 @@ const githubLogin = require('./github-login');
 const invite = require('./invite');
 const manageSt = require('./manage_student');
 const viewProfile = require('./view_profile');
+const profileFeedback = require('./profile_feedback');
 const passport = require('passport');
 const logout = require('./logout.js');
-// const { isAuthenticated, isCF, isStudent } = require('./check-outh.js');
 const { isAuthenticated } = require('./check-outh.js');
 const { isCF } = require('./check-outh.js');
 const { isStudent } = require('./check-outh.js');
@@ -15,6 +15,7 @@ const error = require('./error');
 const notincodeacademy = require('./notincodeacademy');
 const stdPanel = require('./stdPanel');
 const unauthorized = require('./unauthorized');
+const suggestionComplaint = require('./suggestion_complaint');
 
 
 router.get('/', isAuthenticated, isCF, home.get)
@@ -31,15 +32,12 @@ router.get('/', isAuthenticated, isCF, home.get)
   .get('/gmail/cb', invite.gettoken)
   .get('/login', githubLogin.get)
   .get('/viewProfile/:id', isAuthenticated, isCF, viewProfile.get)
+  .get('/feedback/:id', isAuthenticated, profileFeedback.get)
   .get('/github', githubLogin.githubInteract)
   .get('/github/cb', passport.authenticate('github'), githubLogin.githubCb)
-
-  // {
-  //   successReturnToOrRedirect: '/',
-  //   failureRedirect: '/login',
-  // }),
   .get('/notincodeacademy', notincodeacademy.get)
   .get('/stdPanel', isAuthenticated, isStudent, stdPanel.get)
+  .get('/suggestionComplaint', isAuthenticated, isCF, suggestionComplaint.get)
   .use(error.client)
   .use(error.server);
 
