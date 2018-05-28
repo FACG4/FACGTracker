@@ -1,9 +1,8 @@
 const passport = require('passport');
 const GitHubStrategy = require('passport-github').Strategy;
 const request = require('request');
-const insertUser = require('../model/quires/insert_user');
+const updateUsers = require('../model/quires/update_user');
 const checkuser = require('../model/quires/check_user');
-const selectUserId = require('../model/quires/select_user_id');
 require('env2')('./config.env');
 
 passport.serializeUser((user, done) => {
@@ -37,16 +36,28 @@ passport.use(new GitHubStrategy(
       if (!error && response.statusCode === 200) {
         const info = JSON.parse(body);
         checkuser.checkuser(info[0].email, (err, result) => {
-          if (!result.rows.length) {
+          console.log('user information from database', result.rows);
+          if (!result.rows.length) { // email doesnt exist in db
             console.log('not allowed to log in , his email is not in database');
-            done(null, false, { message: 'Incorrect username.' });
+            done(null, { emaiLnotInDB: true });
+          } else if (!result.rows[0].github_username) {
+            updateUsers.updateUsers(
+              profile.username, profile._json.bio, profile._json.avatar_url, info[0].email,
+              (err, result2) => {
+                done(null, {
+                  id: result.rows[0].id,
+                  errDb: err,
+                  role: result.rows[0].role,
+                });
+              }
+            );
           } else {
-            insertUser.insertUsers(profile.username, profile._json.bio, profile._json.avatar_url, info[0].email, (err, result) => {
-              //             // handel error
-            });
-            selectUserId.selectUserId(info[0].email, (err, result) => {
-              //             // handel error
-              done(null, result.rows[0].id);
+            done(null, {
+              id: result.rows[0].id,
+              errDb: err,
+              role: result.rows[0].role,
+              name: result.rows[0].github_username,
+              avatar: result.rows[0].avatar
             });
           }
         });
@@ -54,4 +65,3 @@ passport.use(new GitHubStrategy(
     });
   },
 ));
-

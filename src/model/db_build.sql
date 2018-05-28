@@ -81,7 +81,6 @@ CREATE TABLE suggestions_complaints(
 INSERT INTO cohort (name) VALUES ('FACG4'), ('FACG5');
 
 INSERT INTO users (first_name, last_name, email, bio, phone, password, role, github_username, cohort_id) VALUES
-  ('Ahmed', 'A. Shatat', 'a.shatat@hotmail.com', 'Programming is a dream i hope to achieve', '0599946544', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'student', 'ashatat', 1),
   ('Mohammad', 'Heila', 'a.heila@hotmail.com', 'Programming is a dream i live with it everyday', '0599944654', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'student', 'mheila', 1),
   ('Ahmed', 'M. Shatat', 'ahmed_m_sh@hotmail.com', 'SEO Master', '0599944633', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'student', 'shatat_m', 1),
   ('Farah', 'Zaqot', 'a.zaqot@hotmail.com', 'Great man', '0599944666', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'student', 'zfarah', 1),
@@ -90,7 +89,7 @@ INSERT INTO users (first_name, last_name, email, bio, phone, password, role, git
   (NULL, NULL, 'blsam.2332016@gmail.com', NULL, NULL, NULL, DEFAULT, NULL, 1),
   ('Sultan', 'Asi', 'a.sultan@gmail.com', 'great mentor', '0599223456', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'mentor', 'sultanasi', NULL),
   ('Noureldean', 'Swearky', 'noureldean.saed@gmail.com', 'great mentor', '0599123416', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'mentor', 'NoureldeanSaed', NULL),
-  ('Ahmed', 'Ajour', 'a.ajour@gmail.com', 'great CF', '0599123456', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'cf', 'ahmedaj', NULL),
+  ('Ahmed', 'Ajour', 'anoos.hanii@gmail.com', 'great CF', '0599123456', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'cf', 'ahmedaj', NULL),
   ('Ghada', 'Ibrahim', 'a.ghada@gmail.com', 'great admin', '0599123556', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'admin', 'ghadaibrahim', NULL);
 
 INSERT INTO weeks(week_no, name, cohort_id) VALUES
