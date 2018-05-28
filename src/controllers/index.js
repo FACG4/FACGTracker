@@ -28,5 +28,4 @@ router.get('/', isAuthenticated, home.get)
     failureRedirect: '/login',
   }), githubLogin.githubCb);
 
-
 module.exports = router;

@@ -23,7 +23,8 @@
     "pg": "^7.4.3",
     "request": "^2.87.0",
     "serve-favicon": "^2.5.0",
-    "sweetalert": "^2.1.0"
+    "sweetalert": "^2.1.0",
+    "sweetalert2": "^7.20.10"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
@@ -36,7 +37,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js",
+    "dev": "ENV=development nodemon src/index.js",
     "start": "node src/index.js",
     "build": "node src/model/db_build.js"
   },

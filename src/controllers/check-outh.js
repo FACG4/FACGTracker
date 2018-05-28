@@ -4,7 +4,6 @@ exports.isAuthenticated = (req, res, next) => {
     next();
   } else {
     console.log('Not Authenticated');
-    // IF A USER ISN'T LOGGED IN, THEN REDIRECT THEM TO LOGIN PAGE
     res.redirect('/login');
   }
 };
