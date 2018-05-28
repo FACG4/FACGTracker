@@ -830,6 +830,10 @@ INSERT INTO workshops (day_id , title , link , start_time , end_time) VALUES
 
 INSERT INTO suggestions_complaints (user_id, content, type) VALUES
   (1, 'fun time', 'suggestion'),
-  (2, 'fix AC', 'complaint');
+  (2, 'fix AC', 'complaint'),
+ (1, 'dont push on master hdhhdhdhd', 'complaint'),
+  (2, 'fix AddhdhdhdhhC', 'complaint'),
+ (1, 'dont push on master hdhhdhdhd', 'suggestion'),
+  (2, 'speek english during jddhhdh', 'suggestion');
 
 COMMIT;

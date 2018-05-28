@@ -1,10 +1,10 @@
 const passport = require('passport');
 const GitHubStrategy = require('passport-github').Strategy;
 const request = require('request');
-const insertUser = require('../model/quires/insert_user');
+const updateUsers = require('../model/quires/update_user');
 const checkuser = require('../model/quires/check_user');
-const selectUserId = require('../model/quires/select_user_id');
 require('env2')('./config.env');
+
 
 passport.serializeUser((user, done) => {
   done(null, user);
@@ -19,10 +19,10 @@ passport.deserializeUser((id, done) => {
 });
 
 let callbackURL = '';
-if (process.env.ENV_VAR) {
-  callbackURL = 'http://localhost:3000/github/cb';
-} else {
+if (process.env.ENV === 'production') {
   callbackURL = 'https://facgtracker.herokuapp.com/github/cb';
+} else {
+  callbackURL = 'http://localhost:3000/github/cb';
 }
 
 passport.use(new GitHubStrategy(
@@ -39,27 +39,57 @@ passport.use(new GitHubStrategy(
         'User-Agent': 'request',
       },
     };
-
     request(options, (error, response, body) => {
       if (!error && response.statusCode === 200) {
         const info = JSON.parse(body);
         checkuser.checkuser(info[0].email, (err, result) => {
-          if (!result.rows.length) {
+          console.log('user information from database', result.rows);
+          if (!result.rows.length) { // email doesnt exist in db
             console.log('not allowed to log in , his email is not in database');
-            done(null, { err: true, abd: 'potatoes' }, { message: 'Incorrect username.' });
-            // done(null, false, { message: 'Incorrect username.' });
+            done(null, { emaiLnotInDB: true });
+          } else if (!result.rows[0].github_username) {
+            updateUsers.updateUsers(
+              profile.username, profile._json.bio, profile._json.avatar_url, info[0].email,
+              (err, result2) => {
+                done(null, {
+                  id: result.rows[0].id,
+                  errDb: err,
+                  role: result.rows[0].role,
+                });
+              }
+            );
           } else {
-            selectUserId.selectUserId(info[0].email, (err, result) => {
-              //             // handel error
-              done(null, result.rows[0].id);
-            });
-            insertUser.insertUsers(profile.username, profile._json.bio, profile._json.avatar_url, info[0].email, (err, result) => {
-              //             // handel error
+            done(null, {
+              id: result.rows[0].id,
+              errDb: err,
+              role: result.rows[0].role,
+              name: result.rows[0].github_username,
+              avatar: result.rows[0].avatar
             });
           }
         });
       }
     });
+    // request(options, (error, response, body) => {
+    //   if (!error && response.statusCode === 200) {
+    //     const info = JSON.parse(body);
+    //     checkuser.checkuser(info[0].email, (err, result) => {
+    //       if (!result.rows.length) {
+    //         console.log('not allowed to log in , his email is not in database');
+    //         done(null, { err: true, abd: 'potatoes' }, { message: 'Incorrect username.' });
+    //         // done(null, false, { message: 'Incorrect username.' });
+    //       } else {
+    //         selectUserId.selectUserId(info[0].email, (err, result) => {
+    //           //             // handel error
+    //           done(null, result.rows[0].id);
+    //         });
+    //         insertUser.insertUsers(profile.username, profile._json.bio, profile._json.avatar_url, info[0].email, (err, result) => {
+    //           //             // handel error
+    //         });
+    //       }
+    //     });
+    //   }
+    // });
   },
 ));
 

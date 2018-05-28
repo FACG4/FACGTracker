@@ -1,0 +1,40 @@
+<section class="suggestionComplaint">
+    {{>asidebar}}
+
+    <div class="innerDiv">
+
+        <div class="suggestionDiv">
+            <h1 class="suggestion">Suggestion</h1>
+            <table>
+                {{#each suggestion }}
+                <tr>
+                    <td>
+                        {{this.content}}
+                    </td>
+                    <td>
+                        From : {{this.first_name}}{{this.last_name}}
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+
+        <div class="complaintDiv">
+            <h1 class="complaint">Complaint</h1>
+            <table>
+                {{#each complaint}}
+                <tr>
+                    <td>
+                        {{this.content}}
+                    </td>
+                    <td>
+                        From : {{this.first_name}}{{this.last_name}}
+                    </td>
+
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+
+</section>
