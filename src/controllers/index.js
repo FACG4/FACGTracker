@@ -5,6 +5,7 @@ const githubLogin = require('./github-login');
 const invite = require('./invite');
 const manageSt = require('./manage_student');
 const viewProfile = require('./view_profile');
+const profileFeedback = require('./profile_feedback');
 const passport = require('passport');
 const logout = require('./logout.js');
 const {
@@ -24,6 +25,7 @@ router.get('/', isAuthenticated, home.get)
   .get('/gmail/cb', invite.gettoken)
   .get('/login', githubLogin.get)
   .get('/viewProfile/:id', isAuthenticated, viewProfile.get)
+  .get('/feedback/:id', isAuthenticated, profileFeedback.get)
   .get('/github', githubLogin.githubInteract)
   .get('/github/cb', passport.authenticate('github', {
     successReturnToOrRedirect: '/',

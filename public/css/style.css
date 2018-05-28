@@ -44,8 +44,8 @@ hr {
 .container_avatar_sidenavbar_style {
   display: table-cell;
   background-color: #F6F6F6;
-  width: 30%;
-  height: 100vh;
+  width: 20%;
+  height: 90vh;
   padding: 16px;
 }
 
@@ -95,6 +95,7 @@ footer {
 .footer {
   width: 100%;
   text-align: center;
+  position: fixed;
 }
 
 p {
@@ -240,4 +241,7 @@ label[for='title_studen_tracker'] {
 
 .icon_style {
   padding-right: 10px;
+}
+.no_style {
+  margin: 0;
 }

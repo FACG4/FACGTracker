@@ -49,14 +49,16 @@ section {
 
 .divs_style {
   vertical-align: top;
-  width: 100%;
+  width: 90%;
   padding: 10px;
+  margin: 0 20px;
 }
 
 .container {
   display: table-cell;
   width: 70%;
   vertical-align: top;
+  margin: 10px;
 }
 
 .contaner_user_profile_style {

@@ -91,6 +91,7 @@ INSERT INTO users (first_name, last_name, email, bio, phone, password, role, git
   ('Sultan', 'Asi', 'a.sultan@gmail.com', 'great mentor', '0599223456', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'mentor', 'sultanasi', NULL),
   ('Noureldean', 'Swearky', 'noureldean.saed@gmail.com', 'great mentor', '0599123416', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'mentor', 'NoureldeanSaed', NULL),
   ('Ahmed', 'Ajour', 'a.ajour@gmail.com', 'great CF', '0599123456', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'cf', 'ahmedaj', NULL),
+  ('Inass', 'Tobail', 'anoos.hanii@gmail.com', 'great CF', '0599003456', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'cf', 'inassto', NULL),
   ('Ghada', 'Ibrahim', 'a.ghada@gmail.com', 'great admin', '0599123556', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'admin', 'ghadaibrahim', NULL);
 
 INSERT INTO weeks(week_no, name, cohort_id) VALUES

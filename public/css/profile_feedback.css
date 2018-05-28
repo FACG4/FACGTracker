@@ -1,0 +1,45 @@
+.text_feedback_style {
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+  margin: 10px;
+}
+
+.add_feedback_style {
+  background-color: #67b5ba;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  vertical-align: top;
+  margin-top: 10px;
+  width: 100px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
