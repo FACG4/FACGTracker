@@ -9,7 +9,7 @@ const controllers = require('./controllers/index');
 const helpers = require('./views/helpers/index');
 
 // to set up the passport configerations dont remove it pleeeeease
-const passportSetup = require('./controllers/passport-setup');
+const passportSetup = require('./controllers/passport_setup');
 
 require('env2')('./config.env');
 

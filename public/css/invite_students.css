@@ -1,57 +1,56 @@
 * {
   padding: 0px;
   margin: 0px;
-  box-sizing: border-box;
 }
 
 main {
   display: flex;
+  background-color: #eff7f7;
 }
 
-input[type=email] {
+.email_input_style {
   width: 70%;
   padding: 12px 20px;
   margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type=submit] {
-  font-size: 16px;
-  width: 20%;
-  padding: 10px 18px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type=submit]:hover {
-  cursor: pointer;
-  font-size: 16px;
-  width: 20%;
-  padding: 10px 18px;
-  margin: 8px 0;
-  display: inline-block;
-  border-radius: px;
-  background: #adaaaa;
-  box-sizing: border-box;
-}
-
-.container {
-  margin: 0 auto;
-  margin-top: 50px;
-  padding-left: 20px;
   width: 70%;
-  max-width: 800px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
 }
 
-.container h1 {
-  margin-bottom: 50px;
+.invite_btn_style {
+  font-size: 16px;
+  width: 20%;
+  padding: 10px 18px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #67b5ba;
+  color: white;
+  float: right;
+}
+
+.invite_btn_style :hover {
+  background-color: #4e8b8f;
+  cursor: pointer;
+}
+
+.invite_style {
+  width: 70%;
+  margin: 30px 40px 0 40px;;
+}
+
+.invite_style h1 {
+  font-size: 25px;
+  color: #45758c;
+  display: block;
   text-align: center;
+  font-weight: bold;
 }
 
 .invite-by-email {
@@ -68,185 +67,38 @@ input[type=submit]:hover {
   list-style: none;
 }
 
-.unregistered-emails h2 {
-  font-weight: normal;
-  font-size: 22px;
+.invite_style h2 {
+  font-size: 20px;
+  color: #45758c;
+  display: block;
+  text-align: left;
+  font-weight: bold;
 }
 
 .unregistered-emails li {
   margin-top: 15px;
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid #33595b;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.unregistered-emails button[name='delete'] {
-  margin: 3px;
+.delete_btn_style {
+  font-size: 16px;
+  width: 20%;
+  padding: 10px 18px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   background-color: #ec4141;
   color: white;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 5px;
-  width: 100px;
-  height: 40px;
-  font-weight: bold;
 }
 
-.unregistered-emails button[name='delete']:hover {
-  cursor: pointer;
-  background-color: white;
-  color: black;
-  border: 2px solid #e62f2f;
-  border-radius: 5px;
-  width: 100px;
-  height: 40px;
-  font-weight: bold;
-}
-
-img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-}
-
-label {
-  display: inline;
-  font-weight: bold;
-  padding: 10px;
-  text-align: center;
-}
-
-a {
-  text-decoration: none;
-}
-
-hr {
-  border-color: #FCFCFC;
-  display: block;
-  width: 100%;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-left: auto;
-  margin-right: auto;
-  border-style: inset;
-  border-width: 1px;
-}
-
-section {
-  display: table;
-}
-
-.icon {
-  float: right;
-}
-
-.container_avatar_sidenavbar_style {
-  background-color: #F6F6F6;
-  width: 30%;
-  height: 100vh;
-  padding: 16px;
-  min-width: 200px;
-  max-width: 300px;
-}
-
-.item_sidenav_style {
-  font-weight: bold;
-  padding: 10px;
-  color: #201d1e;
-}
-
-.item_sidenav_style:hover {
-  color: #a6969c;
-  cursor: pointer;
-}
-
-.home_body_style {
-  background-color: #FAFAFA;
-}
-
-.disable {
-  display: none
-}
-
-.disable1 {
-  display: none
-}
-
-.name_cohort_style {
-  display: block;
-  text-align: center;
-  width: 100%;
-  margin: 10px 0 20px 0;
-}
-
-.name_cohort_style label[for='cohort_name'] {
-  margin: 10px;
-}
-
-.divs_style {
-  vertical-align: top;
-  width: 100%;
-  padding: 10px;
-}
-
-.contaner_user_profile_style {
-  margin: 10px 0;
-  width: 100%;
-  height: 40px;
-}
-
-.img_name_style {
-  float: left;
-}
-
-.contaner_user_profile_style button[name='delete'] {
-  margin: 3px;
+.delete_btn_style :hover {
   background-color: #ec4141;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 5px;
-  width: 100px;
-  height: 30px;
-  font-weight: bold;
+  cursor: pointer;
 }
-
-.contaner_user_profile_style button[name='delete']:hover {
-  background-color: white;
-  color: black;
-  border: 2px solid #e62f2f;
-  border-radius: 5px;
-  width: 100px;
-  height: 30px;
-}
-
-.float_buttons_style {
-  float: right;
-}
-
-.cf_avatar_style {
-  display: block;
-  width: 77px;
-  height: 77px;
-  margin: 10px auto;
-  border-radius: 50%;
-}
-
-.user_name_style {
-  line-height: 30px;
-  height: 30px;
-  vertical-align: top;
-  color: #4F4F4F;
-}
-
-.label_title_style {
-  width: 100%;
-  padding: 10px 0;
-}
-
-.FACG4_Students {
-  font-size: 20px;
-  color: #650a2f;
-  display: block;
-}
+ .unregistered-emails span {
+   font-size: 18px;
+ }

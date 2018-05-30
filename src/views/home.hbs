@@ -1,34 +1,32 @@
-<section class="home_body_style">
-  {{>asidebar}}
-  <div class="no_padding">
-    {{>trackBox}}
-    <div class="container_tables">
-      <table>
-        <tr class="table_title_style">
-          <th>Week Mentors</th>
+ {{>asidebar}}
+<div class="home">
+  {{>trackBox}}
+  <div class="container_tables">
+    <table class="weekmentor_table_style">
+      <tr class="table_title_style">
+        <th>Week Mentors</th>
+      </tr>
+      {{#each weekMentors}}
+        <tr>
+          <td>{{this.first_name}} {{this.last_name}}</td>
         </tr>
-        {{#each weekMentors}}
-          <tr>
-            <th>{{this.first_name}} {{this.last_name}}</th>
-          </tr>
-        {{/each}}
-      </table>
-      <table>
-        <tr class="table_title_style">
-          <th>Week in progress : week{{weekWorkshops1.week_no}} ( {{weekWorkshops1.name}} )</th>
+      {{/each}}
+    </table>
+    <table class="weekworkshop_table_style">
+      <tr>
+        <th class="table_title_style">Week in progress : week{{weekWorkshops1.week_no}} ( {{weekWorkshops1.name}} )</th>
+      </tr>
+      <tr>
+        <th class="subtitle_style">Today’s schedule</th>
+      </tr>
+      <tr>
+        <th class="subtitle2_style">day{{weekWorkshops1.day_no}}</th>
+      </tr>
+      {{#each weekWorkshops}}
+        <tr>
+          <td>{{this.start_time}} {{this.end_time}} {{this.title}} </td>
         </tr>
-        <tr class="subtitle_style">
-          <th>Today’s schedule</th>
-        </tr>
-        <tr class="subtitle2_style">
-          <th>day{{weekWorkshops1.day_no}}</th>
-        </tr>
-        {{#each weekWorkshops}}
-          <tr>
-            <th>{{this.start_time}} {{this.end_time}} {{this.title}} </th>
-          </tr>
-        {{/each}}
-      </table>
-    </div>
+      {{/each}}
+    </table>
   </div>
-</section>
+</div>

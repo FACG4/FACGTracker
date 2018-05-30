@@ -24,7 +24,9 @@ exports.get = (req, res) => {
             weekWorkshops: getWeekworkshopsResult,
             weekWorkshops1: getWeekworkshopsResult[0],
             style: ['home_style.css'],
-            script: ['home_dom.js'],
+            script: ['asidebar_dom.js', 'home_dom.js'],
+            name: req.user.name,
+            avatar: req.user.avatar
           });
         }
       });

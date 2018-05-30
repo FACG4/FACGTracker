@@ -3,74 +3,52 @@
   padding: 0;
 }
 
-img {
-  display: block;
-  width: 35%;
-  margin: 10px auto;
+main {
+  display: flex;
+  background-color: #eff7f7;
 }
 
-label {
-  display: inline;
-  font-weight: bold;
-  padding: 10px;
-  text-align: center;
-}
-
-hr {
-  border-color: #FCFCFC;
-  display: block;
-  width: 100%;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-left: auto;
-  margin-right: auto;
-  border-style: inset;
-  border-width: 1px;
-}
-
-section {
-  width: 100%;
-  display: table;
-}
-
-table {
+.weekmentor_table_style, .weekworkshop_table_style {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 300px;
-  margin: 10px auto;
+  width: 100%;
+  margin: 10px;
 }
 
-th, td {
+.weekmentor_table_style th, .weekworkshop_table_style th {
   padding: 8px;
-  color: #4F4F4F;
+  text-align: left;
+  background-color: #67b5ba;
+  color: white;
 }
 
-tr {
+.weekmentor_table_style td, .weekworkshop_table_style td {
+  border: 1px solid #d2e2e0;
+  padding: 8px;
+}
+
+.weekmentor_table_style tr, .weekworkshop_table_style tr {
   width: 100%
 }
 
-tr:nth-child(even) {
-  background-color: #E7E7E7;
-}
-
-tr:nth-child(odd) {
-  background-color: #F2F2F2;
+.weekmentor_table_style tr:nth-child(even), .weekworkshop_table_style tr:nth-child(even) {
+  background-color: #d2e2e0;
 }
 
 tr.table_title_style {
-  background-color: #C0C0C0;
+  background-color: #67b5ba;
 }
 
 tr.subtitle_style {
-  background-color: #CACACA;
+  background-color: #9ad6da;
   text-align: center;
 }
 
 tr.subtitle2_style {
-  background-color: #CDCDCD;
+  background-color: #c1e4e7;
   color: #4F4F4F;
   font-size: 13px;
 }
-
 
 .container_tables {
   display: flex;
@@ -78,14 +56,7 @@ tr.subtitle2_style {
   margin: 30px 0;
 }
 
-.home_body_style {
-  background-color: #FAFAFA;
+.home {
+  width: 70%;
+  margin-left: 40px;
 }
-.no_padding {
-  display: table-cell;
-  height: 100vh;
-  padding: 16px;
-  vertical-align: top;
-}
-
-

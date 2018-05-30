@@ -1,5 +1,7 @@
 const saveAttendanceBtn = document.getElementById('saveAttendanceBtn');
 const attendanceTable = document.getElementById('attendanceTable');
+const routeName = document.querySelectorAll('a[name=attendance]')[0];
+routeName.classList.add('selected_item');
 
 attendanceTable.addEventListener('input', (e) => {
   console.log('working');

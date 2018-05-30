@@ -1,31 +1,44 @@
-section .suggestionComplaint{
-    display: flex;
-    justify-content: space-between;
-    width:100%;
-
+main {
+  display: flex;
+  background-color: #eff7f7;
 }
 
-
-.container_avatar_sidenavbar_style{
-    width: 220px;
+.suggestion_style {
+  width: 70%;
+  margin-left: 40px;
+  background-color: #eff7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.innerDiv{
-
+.suggestion_table_style , .complaint_table_style {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10px;
 }
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
+.suggestion_table_style th, .complaint_table_style th {
+  padding: 8px;
+  text-align: center;
+  background-color: #67b5ba;
+  color: white;
+  column-span: 2;
+}
+ .suggestion_table_style td , .complaint_table_style td {
+   border: 1px solid #d2e2e0;
+   padding: 8px;
+ }
+.suggestion_table_style tr, .complaint_table_style tr {
+  width: 100%
 }
 
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+ .suggestion_table_style tr:nth-child(even), .complaint_table_style tr:nth-child(even) {
+   background-color: #d2e2e0;
 }
 
-tr:nth-child(even) {
-    background-color: #dddddd;
+.suggestionDiv , .complaintDiv{
+  margin: 20px;
+  width: 100%;
 }

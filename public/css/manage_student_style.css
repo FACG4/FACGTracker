@@ -1,21 +1,14 @@
 * {
   padding: 0px;
   margin: 0px;
-  box-sizing: border-box;
 }
 
-label {
-  display: inline;
-  font-weight: bold;
-  padding: 10px;
-  text-align: center;
+main {
+  display: flex;
+  background-color: #eff7f7;
 }
 
-a {
-  text-decoration: none;
-}
-
-hr {
+.contaner_user_profile_style hr {
   border-color: #FCFCFC;
   display: block;
   width: 100%;
@@ -27,24 +20,10 @@ hr {
   border-width: 1px;
 }
 
-section {
-  display: table;
-}
-
 .student_photo {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-}
-
-.home_body_style {
-  background-color: #FAFAFA;
-  width: 100%;
-}
-
-.container_avatar_sidenavbar_style {
-  width: 20%;
-  min-width: 250px;
 }
 
 .divs_style {
@@ -54,11 +33,10 @@ section {
   margin: 0 20px;
 }
 
-.container {
-  display: table-cell;
+.manage_style {
   width: 70%;
-  vertical-align: top;
-  margin: 10px;
+  margin: 30px 40px 0 40px;;
+  background-color: #eff7f7;
 }
 
 .contaner_user_profile_style {
@@ -73,7 +51,7 @@ section {
 
 .contaner_user_profile_style button[name='profile'] {
   margin: 3px;
-  background-color: #4c59af;
+  background-color: #67b5ba;
   color: white;
   text-align: center;
   text-decoration: none;
@@ -84,12 +62,13 @@ section {
 }
 
 .contaner_user_profile_style button[name='profile']:hover {
-  background-color: white;
-  color: black;
-  border: 2px solid #4c59af;
+  background-color: #4e8b8f;
+  color: white;
+  border: 2px solid #4e8b8f;
   border-radius: 5px;
   width: 100px;
   height: 30px;
+  cursor: pointer;
 }
 
 .contaner_user_profile_style button[name='delete'] {
@@ -105,12 +84,13 @@ section {
 }
 
 .contaner_user_profile_style button[name='delete']:hover {
-  background-color: white;
-  color: black;
-  border: 2px solid #e62f2f;
+  background-color: #ec4141;
+  color: white;
+  border: 2px solid #ba2d2d;
   border-radius: 5px;
   width: 100px;
   height: 30px;
+  cursor: pointer;
 }
 
 .float_buttons_style {
@@ -127,10 +107,13 @@ section {
 .label_title_style {
   width: 100%;
   padding: 10px 0;
+  margin-bottom: 15px;
 }
 
 .FACG4_Students {
-  font-size: 20px;
-  color: #650a2f;
+  font-size: 25px;
+  color: #45758c;
   display: block;
+  text-align: center;
+  font-weight: bold;
 }

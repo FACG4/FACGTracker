@@ -1,3 +1,7 @@
+const routeName = document.querySelectorAll('a[name=studentsI]')[0];
+routeName.classList.add('selected_item');
+const routeNameDiv = document.querySelectorAll('div[name=students]')[0];
+routeNameDiv.classList.add('selected_item');
 const unregisteredUl = document.querySelector('.unregistered-emails');
 unregisteredUl.addEventListener('click', (e) => {
   if (e.target.name === 'delete') {

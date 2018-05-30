@@ -1,16 +1,15 @@
 const router = require('express').Router();
 const attendance = require('./attendance');
 const home = require('./home');
-const githubLogin = require('./github-login');
+const githubLogin = require('./github_login');
 const invite = require('./invite');
 const manageSt = require('./manage_student');
 const viewProfile = require('./view_profile');
 const profileFeedback = require('./profile_feedback');
+const profileRedflag = require('./profile_redflag');
 const passport = require('passport');
 const logout = require('./logout.js');
-const { isAuthenticated } = require('./check-outh.js');
-const { isCF } = require('./check-outh.js');
-const { isStudent } = require('./check-outh.js');
+const { isCF, isStudent, isAuthenticated } = require('./check_outh.js');
 const error = require('./error');
 const notincodeacademy = require('./notincodeacademy');
 const stdPanel = require('./stdPanel');
@@ -33,6 +32,9 @@ router.get('/', isAuthenticated, isCF, home.get)
   .get('/login', githubLogin.get)
   .get('/viewProfile/:id', isAuthenticated, isCF, viewProfile.get)
   .get('/feedback/:id', isAuthenticated, profileFeedback.get)
+  .get('/red_flags/:id', isAuthenticated, profileRedflag.get)
+  .post('/postFeedback', isAuthenticated, profileFeedback.post)
+  .post('/postRedflag', isAuthenticated, profileRedflag.post)
   .get('/github', githubLogin.githubInteract)
   .get('/github/cb', passport.authenticate('github'), githubLogin.githubCb)
   .get('/notincodeacademy', notincodeacademy.get)

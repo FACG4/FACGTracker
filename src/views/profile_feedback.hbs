@@ -1,20 +1,22 @@
-<section>
-  <div class="container_add_feedback_style">
+<div class="container_add_feedback_style">
+  <form>
     <textarea class="text_feedback_style" name="addFeedback" rows="8" cols="80" placeholder="Post feedback"></textarea>
     <button class="add_feedback_style" type="submit" name="button">Send</button>
-  </div>
+  </form>
+</div>
+<div class="container_table_style">
   <table>
     <tr>
-      <th>1</th>
-      <th>2</th>
+      <th colspan="2">Feedback</th>
     </tr>
-    <tr>
-      <td>3</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>6</td>
-    </tr>
+    {{#each feedback}}
+      <tr>
+        <td>{{this.content}}</td>
+        <td class="date_width">{{this.date}}</td>
+      </tr>
+    {{/each}}
   </table>
-</section>
+</div>
+<div class="divnone">
+  {{user_id}}
+</div>

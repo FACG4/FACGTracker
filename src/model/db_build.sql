@@ -47,13 +47,14 @@ CREATE TABLE attendance(
 CREATE TABLE flags(
   id SERIAL PRIMARY KEY,
   user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
-  type VARCHAR(30) CHECK(type IN ('attendance', 'being on time', 'attitude towards teemwork', 'attitude towards learning', 'emotional maturity'))
+  type VARCHAR(30) CHECK(type IN ('Attendance', 'Being on time', 'Attitude towards teamwork', 'Attitude towards learning', 'Emotional maturity'))
 );
 
 CREATE TABLE feedbacks(
   id SERIAL PRIMARY KEY,
   user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
-  content TEXT NOT NULL
+  content TEXT NOT NULL,
+  date VARCHAR NOT NULL
 );
 
 CREATE TABLE week_mentors(
@@ -80,18 +81,17 @@ CREATE TABLE suggestions_complaints(
 
 INSERT INTO cohort (name) VALUES ('FACG4'), ('FACG5');
 
-INSERT INTO users (first_name, last_name, email, bio, phone, password, role, github_username, cohort_id) VALUES
-  ('Mohammad', 'Heila', 'a.heila@hotmail.com', 'Programming is a dream i live with it everyday', '0599944654', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'student', 'mheila', 1),
-  ('Ahmed', 'M. Shatat', 'ahmed_m_sh@hotmail.com', 'SEO Master', '0599944633', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'student', 'shatat_m', 1),
-  ('Farah', 'Zaqot', 'a.zaqot@hotmail.com', 'Great man', '0599944666', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'student', 'zfarah', 1),
-  (NULL, NULL, 'abdalsamad.y.m@gamil.com', NULL, NULL, NULL, DEFAULT, NULL, 1),
-  (NULL, NULL, 'anoos.haniioi@gmail.com', NULL, NULL, NULL, DEFAULT, NULL, 1),
-  (NULL, NULL, 'blsam.2332016@gmail.com', NULL, NULL, NULL, DEFAULT, NULL, 1),
-  ('Sultan', 'Asi', 'a.sultan@gmail.com', 'great mentor', '0599223456', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'mentor', 'sultanasi', NULL),
-  ('Noureldean', 'Swearky', 'noureldean.saed@gmail.com', 'great mentor', '0599123416', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'mentor', 'NoureldeanSaed', NULL),
-  ('Ahmed', 'Ajour', 'a.ajour@gmail.com', 'great CF', '0599123456', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'cf', 'ahmedaj', NULL),
-  ('Inass', 'Tobail', 'anoos.hanii@gmail.com', 'great CF', '0599003456', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'cf', 'inassto', NULL),
-  ('Ghada', 'Ibrahim', 'a.ghada@gmail.com', 'great admin', '0599123556', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'admin', 'ghadaibrahim', NULL);
+INSERT INTO users (first_name, last_name, email, bio, phone, password, role, github_username, cohort_id , avatar) VALUES
+  ('Mohammad', 'Heila', 'a.heila@hotmail.com', 'Programming is a dream i live with it everyday', '0599944654', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'student', 'mheila', 1 , 'https://avatars1.githubusercontent.com/u/7594617?s=400&v=4'),
+  ('Ahmed', 'M. Shatat', 'ahmed_m_sh@hotmail.com', 'SEO Master', '0599944633', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'student', 'shatat_m', 1, 'https://avatars1.githubusercontent.com/u/28850688?s=400&v=4'),
+  ('Farah', 'Zaqot', 'a.zaqot@hotmail.com', 'Great man', '0599944666', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'student', 'zfarah', 1, 'https://avatars1.githubusercontent.com/u/25854070?s=400&v=4'),
+  (NULL, NULL, 'abdalsamad.y.m@gamil.com', NULL, NULL, NULL, DEFAULT, NULL, 1, NULL),
+  (NULL, NULL, 'anoos.haniioi@gmail.com', NULL, NULL, NULL, DEFAULT, NULL, 1, NULL),
+  (NULL, NULL, 'balsamashi888@gmail.com', NULL, NULL, NULL, 'cf', NULL, 1, NULL),
+  ('Sultan', 'Asi', 'a.sultan@gmail.com', 'great mentor', '0599223456', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'mentor', 'sultanasi', NULL , NULL),
+  ('Noureldean', 'Swearky', 'noureldean.saed@gmail.com', 'great mentor', '0599123416', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'mentor', 'NoureldeanSaed', NULL, NULL),
+  ('Ahmed', 'Ajour', 'a.ajour@gmail.com', 'great CF', '0599123456', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'cf', 'ahmedaj', NULL, NULL),
+  ('Ghada', 'Ibrahim', 'a.ghada@gmail.com', 'great admin', '0599123556', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'admin', 'ghadaibrahim', NULL, NULL);
 
 INSERT INTO weeks(week_no, name, cohort_id) VALUES
   (1, 'Toolkit', 1),
@@ -731,14 +731,16 @@ INSERT INTO attendance(user_id, clock_in, clock_out, day_id) VALUES
   ( 4, '09:00:00', '17:00:00', 119 );
 
 INSERT INTO flags(user_id, type) VALUES
-  (1, 'attendance'),
-  (1, 'being on time'),
-  (1, 'attitude towards teemwork'),
-  (2, 'attitude towards learning');
+  (1, 'Attendance'),
+  (1, 'Being on time'),
+  (1, 'Attitude towards teamwork'),
+  (2, 'Attitude towards learning');
 
-INSERT INTO feedbacks (user_id, content) VALUES
-  (1, 'you are doing great but you should stop your bad attitude towards your teamwork, we all have different thoughts and we should bear with each other'),
-  (1, 'you have been late for more than one day, please come in early');
+INSERT INTO feedbacks (user_id, content , date) VALUES
+  (1, 'you are doing great but you should stop your bad attitude towards your teamwork, we all have different thoughts and we should bear with each other' , '2018-05-04'),
+  (1, 'you have been late for more than one day, please come in early' , '2018-05-02'),
+  (2, 'you have been late for more than one day, please come in early' , '2018-05-07'),
+  (3, 'you have been late for more than one day, please come in early' , '2018-05-11');
 
 INSERT INTO week_mentors (user_id, week_id) VALUES
   ( 8, 1 ),
@@ -829,12 +831,12 @@ INSERT INTO workshops (day_id , title , link , start_time , end_time) VALUES
 
 
 INSERT INTO suggestions_complaints (user_id, content, type) VALUES
-  (1, 'fun time', 'suggestion'),
-  (2, 'fix AC', 'complaint'),
- (1, 'dont push on master hdhhdhdhd', 'complaint'),
-  (2, 'fix AddhdhdhdhhC', 'complaint'),
- (1, 'dont push on master hdhhdhdhd', 'suggestion'),
-  (2, 'speek english during jddhhdh', 'suggestion');
+  (1, 'Fun time', 'suggestion'),
+  (2, 'Fix AC', 'complaint'),
+ (3, 'Dont push on master', 'suggestion'),
+  (1, 'Fix internet connection', 'complaint'),
+ (2, 'Dont push on master ', 'suggestion'),
+  (3, 'Speek english during workshops', 'complaint');
 
 
 COMMIT;

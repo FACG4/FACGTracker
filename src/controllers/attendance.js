@@ -20,8 +20,10 @@ exports.get = (req, res) => {
             lateSts: result.lateSts,
             leaveSts: result.leaveSts,
             students,
-            style: ['home_style.css', 'attendance.css'],
-            script: ['main.js', 'home_dom.js']
+            style: ['attendance.css'],
+            script: ['attendance_dom.js', 'asidebar_dom.js'],
+            name: req.user.name,
+            avatar: req.user.avatar
           });
         }
       });

@@ -1,3 +1,7 @@
+const routeName = document.querySelectorAll('a[name=studentsM]')[0];
+routeName.classList.add('selected_item');
+const routeNameDiv = document.querySelectorAll('div[name=students]')[0];
+routeNameDiv.classList.add('selected_item');
 const bigDiv = selector('.divs_style');
 if (bigDiv) {
   bigDiv.addEventListener('click', (e) => {

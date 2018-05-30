@@ -4,9 +4,11 @@ exports.get = (req, res) => {
   getUserInfo(req.params.id, (getUserInfoErr, getUserInfoResult) => {
     if (getUserInfoErr) return res.status(500);
     res.render('view_profile', {
+      user_id: req.params.id,
       info: getUserInfoResult[0],
-      style: ['profile_style.css'],
-      script: ['profile_dom.js'],
+      layout: 'student_page',
+      style: ['student_header.css', 'profile_style.css'],
+      script: ['view_profile_dom.js'],
     });
   });
 };

@@ -1,20 +1,19 @@
 {{>asidebar}}
-<div class="container">
+<div class="invite_style">
   <h1>Invite a student by Email</h1>
 
   <form class="invite-by-email" action="/invitebygmail" method="POST">
-    <label for="Email">Enter student email</label>
-    <input type="email" name="studentEmail" id="Email" placeholder="Enter student email">
-    <input type="submit" value="Invite">
+    <input class="email_input_style" type="email" name="studentEmail" id="Email" placeholder="Enter student email" required>
+    <input class="invite_btn_style" type="submit" value="Invite">
   </form>
 
+  <h2>Unregistered students</h2>
   <ul class="unregistered-emails">
-    <h2>Unregistered students</h2>
     {{#each emails}}
-    <li>
-      <span>{{this.email}}</span>
-        <button id="{{this.id}}" type="button" name="delete">Delete</button>
-    </li>
+      <li>
+        <span>{{this.email}}</span>
+        <button class="delete_btn_style" id="{{this.id}}" type="button" name="delete">Delete</button>
+      </li>
     {{/each}}
   </ul>
 </div>

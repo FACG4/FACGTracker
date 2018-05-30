@@ -25,7 +25,7 @@ small {
   color: white;
 }
 
-hr {
+.container_avatar_sidenavbar_style hr {
   border-color: #FCFCFC;
   display: block;
   width: 100%;
@@ -43,8 +43,8 @@ hr {
 
 .container_avatar_sidenavbar_style {
   display: table-cell;
-  background-color: #d6d1d1;
-  width: 20%;
+  background-color: #283637;
+  width: 20vw;
   height: 90vh;
   padding: 16px;
 }
@@ -58,12 +58,12 @@ hr {
 
 .item_sidenav_style {
   font-weight: bold;
-  color: #201d1e;
-  padding: 10px;
+  color: #d9eeec;
+  padding: 10px 0;
 }
 
 .item_sidenav_style:hover {
-  color: #a6969c;
+  color: #5aafaa;
   cursor: pointer;
 }
 
@@ -85,6 +85,7 @@ hr {
 .name_cohort_style label[for='cohort_name'] {
   margin: 10px;
   display: block;
+  color: #d9eeec;
 }
 
 footer {
@@ -107,12 +108,12 @@ p {
   margin: 0px 20px;
 }
 
-.current_date_style label[for='date'] {
+.current_date_style {
   text-align: left;
   width: 100%;
-  color: #9a385a;
+  color: #45758c;
   font-size: 30px;
-  margin: 10px 0;
+  margin: 40px 0;
 }
 
 label[for='title_studen_tracker'] {
@@ -242,6 +243,16 @@ label[for='title_studen_tracker'] {
 .icon_style {
   padding-right: 10px;
 }
+
 .no_style {
   margin: 0;
+}
+
+.cf_name {
+  margin-top: 20px;
+  color: #d9eeec;
+}
+
+.selected_item {
+  color: #5aafaa;
 }

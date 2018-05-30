@@ -1,40 +1,7 @@
-<section>
-  <img class="cover_style" src="/images/cover_image.jpeg" alt="cover img">
-  {{#if info.avatar}}
-  <img id="cf_avatar" class = "cf_avatar_style" src="{{info.avatar}}" alt="cf avatar">
-  {{else}}
-  <img id="cf_avatar" class = "cf_avatar_style" src="/images/cf_avatar.png" alt="cf avatar">
-  {{/if}}
-  <p for="profile_username_style" class="profile_username_style">{{info.first_name}} {{info.last_name}}</p>
-  <p for="profile_address_style" class="profile_address_style">Gaza, Palestine</p>
-</section>
-
-<div class="profile_divs">
-
-  <section class="profile_sidebay_style">
-    <div class="profile_sidebar_item_style">
-        <a href="/">Home</a>
-    </div>
-    <hr>
-    <div class="profile_sidebar_item_style">
-      Info
-    </div>
-    <hr>
-    <div class="profile_sidebar_item_style">
-      <a href="/feedback/{{info.id}}">Feedback</a>
-    </div>
-    <hr>
-    <div class="profile_sidebar_item_style">
-    <a href="/red_flags/{{info.id}}">Red Flags</a>
-    </div>
-    <hr>
-  </section>
-
+<div class="profiledivs_style">
     <section class="profile_info_style">
       <p class="profile_bio_style">{{info.bio}}</p>
       <p class="profile_email_style">{{info.email}}</p>
       <p class="profile_phone_style">{{info.phone}}</p>
     </section>
-
 </div>
-<!-- {{>footer}} -->

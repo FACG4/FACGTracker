@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{>htmlHead}}
+</head>
+<body>
+  <header>
+    {{>student_header}}
+  </header>
+  <main class="student-main">
+    <nav class="side-navbar">
+      {{>student_nav}}
+    </nav>
+    <section class="main-container">
+      {{{body}}}
+    </section>
+  </main>
+  {{>footer}}
+  <script type='text/javascript' src='/js/logic.js'></script>
+  {{#if script}}
+    {{#each script}}
+      <script type='text/javascript' src='/js/{{this}}'></script>
+    {{/each}}
+  {{/if}}
+</body>
+{{>footer}}
+</html>

@@ -7,7 +7,9 @@ exports.get = (req, res) => {
     res.render('manage_student', {
       names: getStNamesResult,
       style: ['manage_student_style.css'],
-      script: ['manage_st_dom.js', 'home_dom.js'],
+      script: ['manage_st_dom.js', 'asidebar_dom.js'],
+      name: req.user.name,
+      avatar: req.user.avatar
     });
   });
 };

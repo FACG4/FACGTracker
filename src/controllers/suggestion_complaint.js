@@ -1,6 +1,4 @@
-
 const selectSuggestionComplaint = require('../model/quires/suggestions_complaints');
-
 
 exports.get = (req, res) => {
   selectSuggestionComplaint.suggestionComplaint((err, result) => {
@@ -17,6 +15,9 @@ exports.get = (req, res) => {
 
     res.render('suggestion_complaint', {
       style: ['suggestion_complaint.css'],
+      script: ['asidebar_dom.js', 'com_sugg_dom.js'],
+      name: req.user.name,
+      avatar: req.user.avatar,
       suggestion,
       complaint,
       err: res.err

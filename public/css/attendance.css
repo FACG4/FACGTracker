@@ -1,28 +1,30 @@
 main {
   display: flex;
-  justify-content: space-between;
+  background-color: #eff7f7;
 }
+
 .attendance {
   width: 70%;
+  margin-left: 40px;
 }
-.container_avatar_sidenavbar_style {
-  width: 20%;
-  min-width: 250px;
+
+.form_attendance_style {
+  margin: 30px 0;
 }
+
 .attendance-table {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
 
-.attendance-table td,
-.attendance-table th {
-  border: 1px solid #ddd;
+.attendance-table td, .attendance-table th {
+  border: 1px solid #d2e2e0;
   padding: 8px;
 }
 
 .attendance-table tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #d2e2e0;
 }
 
 .attendance-table tr:hover {
@@ -33,20 +35,21 @@ main {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #4CAF50;
+  background-color: #67b5ba;
   color: white;
 }
 
 .attendance-save-button {
-  margin: 3px;
-  background-color: #4c59af;
+  background-color: #67b5ba;
+  border: none;
   color: white;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
   border-radius: 5px;
+  vertical-align: top;
+  margin-top: 15px;
   width: 100px;
-  height: 30px;
-  font-weight: bold;
 }
-
-

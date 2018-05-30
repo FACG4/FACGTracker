@@ -1,0 +1,81 @@
+main {
+  display: flex;
+  background-color: #eff7f7;
+}
+
+.container_flag_table_style {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  margin: 20px auto;
+  width: 70%;
+}
+
+.container_flag_table_style table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.container_flag_table_style td {
+  border: 1px solid #d2e2e0;
+  padding: 8px;
+}
+
+.container_flag_table_style tr:nth-child(even) {
+  background-color: #d2e2e0;
+}
+
+.flags_style {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.flag_icon_style {
+  width: 40px;
+  height: 40px;
+}
+
+.redflag_label_style {
+  height: 40px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.flag_types_style {
+  width: 220px;
+  height: 40px;
+  font-size: 18px;
+  margin: 8px;
+  border-radius: 5px;
+  background-color: #d2e2e0;
+}
+
+.type_list_item_style {
+  width: 220px;
+  height: 40px;
+  font-size: 18px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+.add_flag_btn_style {
+  background-color: #67b5ba;
+  border: none;
+  color: white;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  vertical-align: top;
+  width: 100px;
+}
+
+.divnone {
+  display: none;
+}
+
+.flag_type_add_style {
+  display: flex;
+}

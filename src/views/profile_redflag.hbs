@@ -1,0 +1,28 @@
+<div class="flags_style">
+  <div class="flag_type_add_style">
+
+  <img class="flag_icon_style" src="/images/flag.png" alt="flag">
+  <label class="redflag_label_style" for="redFlag">Red Flags</label>
+  <select class="flag_types_style" name="flagsType">
+      <option class="type_list_item_style" value="Type" selected="selected">Type</option>
+      <option class="type_list_item_style" value="Attendance">Attendance</option>
+      <option class="type_list_item_style" value="Being on time">Being on time</option>
+      <option class="type_list_item_style" value="Attitude towards teamwork">Attitude towards teamwork</option>
+      <option class="type_list_item_style" value="Attitude towards learning">Attitude towards learning</option>
+      <option class="type_list_item_style" value="Emotional maturity">Emotional maturity</option>
+    </select>
+
+  <button class="add_flag_btn_style" type="button" name="add">Add</button>
+</div>
+</div>
+<div class="container_flag_table_style">
+  <table>
+    {{#each flags}}
+      <tr>
+        <td>Flag{{this.id}}</td>
+        <td>{{this.type}}</td>
+      </tr>
+    {{/each}}
+  </table>
+</div>
+<div class="divnone">{{user_id}}</div>
