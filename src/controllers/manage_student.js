@@ -17,7 +17,6 @@ exports.get = (req, res) => {
 
 exports.delete = (req, res) => {
   deleteStudent(req.body.id, (deleteStudentErr, deleteStudentResult) => {
-    // if (deleteStudentErr) return res.status(500);
     if (deleteStudentErr) {
       console.log('deleteStudentErr', deleteStudentErr);
       res.status(500);

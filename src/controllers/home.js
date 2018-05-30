@@ -10,7 +10,7 @@ exports.get = (req, res) => {
     if (getWeekMentorsErr) return res.status(500);
     getWeekworkshops(req.user.cohort_id, (getWeekworkshopsErr, getWeekworkshopsResult) => {
       if (getWeekworkshopsErr) return res.status(500);
-      trackBoxQueries.getTrackBoxInfo(date, (err, result) => {
+      trackBoxQueries.getTrackBoxInfo(req.user.cohort_id, (err, result) => {
         if (err) {
           console.log('TrackboxInfoErr', err);
         } else {

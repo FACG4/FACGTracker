@@ -22,17 +22,19 @@ exports.get = (req, res, next) => {
           'manage_student_style.css', 'invite_students.css'
         ],
         script: [
-          'manage_st_dom.js',
-          'invite_st.js'
+          'asidebar_dom.js',
+          'invitest_dom.js'
         ],
         name: req.user.name,
-        avatar: req.user.avatar
+        avatar: req.user.avatar,
+        cohortName: req.user.cohort_name
       });
     }
   });
 };
 
 exports.getcode = (req, res, next) => {
+  console.log('invite.js getcode', req.body)
   studentEmail = req.body.email;
   inviteStudent.checkInviteEmail(studentEmail, (checkInviteEmailError, exist) => {
     if (checkInviteEmailError) {

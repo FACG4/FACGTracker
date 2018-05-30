@@ -5,25 +5,26 @@
   </div>
   <div class="divs_style">
     {{#each names}}
-      {{#if this.first_name}}
-        {{#if this.last_name}}
-          <div class="contaner_user_profile_style">
-            <div class="img_name_style">
-              {{#if this.avatar}}
-                <img id="cf_avatar" class="student_photo" src="{{this.avatar}}" alt="cf avatar">
+      <div class="contaner_user_profile_style">
+        <div class="img_name_style">
+          {{#if this.avatar}}
+            <img id="cf_avatar" class="student_photo" src="{{this.avatar}}" alt="cf avatar">
+          {{else}}
+            <img id="cf_avatar" class="student_photo" src="/images/cf_avatar.png" alt="cf avatar">
+          {{/if}}
+          <label for="user_name_style" class="user_name_style">
+            {{#if this.first_name}}
+              {{this.first_name}}  {{this.last_name}}
               {{else}}
-                <img id="cf_avatar" class="student_photo" src="/images/cf_avatar.png" alt="cf avatar">
-              {{/if}}
-              <label for="user_name_style" class="user_name_style">{{this.first_name}}  {{this.last_name}}</label>
-            </div>
-            <div id="{{this.id}}" class="float_buttons_style">
-              <button type="button" name="profile">View profile</button>
-              <button type="button" name="delete">Delete</button>
-            </div>
-            <hr>
-          </div>
-        {{/if}}
-      {{/if}}
+              @{{this.github_username}}
+            {{/if}}</label>
+        </div>
+        <div id="{{this.id}}" class="float_buttons_style">
+          <button type="button" name="profile">View profile</button>
+          <button type="button" name="delete">Delete</button>
+        </div>
+        <hr>
+      </div>
     {{/each}}
   </div>
 </div>

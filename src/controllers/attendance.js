@@ -9,7 +9,7 @@ exports.get = (req, res) => {
     if (err) {
       console.log('gettAttendaceInfoErr', err);
     } else {
-      trackBoxQueries.getTrackBoxInfo(dateToday, (err1, result) => {
+      trackBoxQueries.getTrackBoxInfo(req.user.cohort_id, (err1, result) => {
         if (err) {
           console.log('trackBoxErr', err1);
         } else {

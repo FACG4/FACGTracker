@@ -13,10 +13,10 @@ const executeQuery = (sql, cb) => {
   });
 };
 
-const presentSt = (date, cb) => {
+const presentSt = (cohortId, cb) => {
   const sql = {
-    text: 'SELECT a.user_id FROM attendance a JOIN days d ON a.day_id = d.id JOIN weeks w ON d.week_id = w.id WHERE d.date = $1;',
-    values: [date],
+    text: 'SELECT a.user_id FROM attendance a INNER JOIN days d ON a.day_id = d.id INNER JOIN weeks w ON d.week_id = w.id INNER JOIN users ON users.id = a.user_id WHERE users.github_username IS NOT NULL AND users.role = \'student\' AND d.date = $1 AND w.cohort_id = $2;',
+    values: [date, cohortId],
   };
   dbConnections.query(sql, (err, result) => {
     if (err) {
@@ -27,8 +27,8 @@ const presentSt = (date, cb) => {
   });
 };
 
-const abcentStudents = (cb) => {
-  const date = formatDate.getRightFormatDate().newdate.split(',')[1];
+const abcentStudents = (cohortId, cb) => {
+  // const date = formatDate.getRightFormatDate().newdate.split(',')[1];
   const sql = 'SELECT id FROM users WHERE role = \'student\' AND github_username IS NOT NULL;';
   dbConnections.query(
     sql,
@@ -36,7 +36,7 @@ const abcentStudents = (cb) => {
       if (err) {
         cb(err);
       } else {
-        presentSt(date, (err1, getPresentStudentResult) => {
+        presentSt(cohortId, (err1, getPresentStudentResult) => {
           if (err1) {
             cb(err1);
           } else {
@@ -48,36 +48,36 @@ const abcentStudents = (cb) => {
   );
 };
 
-const leaveStudents = (date, cb) => {
+const leaveStudents = (cb) => {
   const sql = {
-    text: 'SELECT a.user_id FROM attendance a INNER JOIN days d ON d.id = a.day_id WHERE clock_out < \'17:00:00\' AND d.date =  $1 ;',
+    text: 'SELECT a.user_id FROM attendance a INNER JOIN days d ON d.id = a.day_id INNER JOIN users ON users.id = a.user_id WHERE clock_out < \'17:00:00\' AND users.role = \'student\' AND users.github_username IS NOT NULL AND d.date =  $1;',
     values: [date],
   };
   executeQuery(sql, cb);
 };
 
-const lateStudents = (date, cb) => {
+const lateStudents = (cb) => {
   const sql = {
-    text: 'SELECT a.user_id FROM attendance a INNER JOIN days d ON d.id = a.day_id WHERE clock_in > \'09:00:00\' AND d.date = $1 ;',
+    text: 'SELECT a.user_id FROM attendance a INNER JOIN days d ON d.id = a.day_id INNER JOIN users ON users.id = a.user_id WHERE clock_in > \'09:00:00\' AND users.role = \'student\' AND users.github_username IS NOT NULL AND d.date = $1;',
     values: [date],
   };
   executeQuery(sql, cb);
 };
 
-const getTrackBoxInfo = (date, cb) => {
-  presentSt(date, (err, present) => {
+const getTrackBoxInfo = (cohortId, cb) => {
+  presentSt(cohortId, (err, present) => {
     if (err) {
       console.error('presentStunetnErr', err);
     } else {
-      abcentStudents((err1, abcent) => {
+      abcentStudents(cohortId, (err1, abcent) => {
         if (err) {
           console.log('abcentErr', err);
         } else {
-          leaveStudents(date, (err2, leave) => {
+          leaveStudents((err2, leave) => {
             if (err) {
               console.log('leaveErr', err);
             } else {
-              lateStudents(date, (err3, late) => {
+              lateStudents((err3, late) => {
                 if (err) {
                   console.log('lateErr', err);
                 } else {

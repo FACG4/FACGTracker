@@ -18,8 +18,8 @@
 <div class="container_flag_table_style">
   <table>
     {{#each flags}}
-      <tr>
-        <td>Flag{{this.id}}</td>
+      <tr id="{{this.id}}">
+        <td>Flag {{addone @index}}</td>
         <td>{{this.type}}</td>
       </tr>
     {{/each}}

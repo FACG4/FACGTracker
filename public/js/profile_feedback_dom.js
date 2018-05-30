@@ -1,11 +1,10 @@
 const textareaAddFeedback = selector('.text_feedback_style');
-const btnAddFeedback = selector('.add_feedback_style');
+const FeedbackForm = selector('.feedback_form');
 const divnone = selector('.divnone');
 const routeName = document.querySelectorAll('a[name=Feedback]')[0];
 routeName.classList.add('selected_item');
-btnAddFeedback.addEventListener('click', (e) => {
+FeedbackForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  console.log(window.location.pathname);
   if (textareaAddFeedback.value === '') {
     swal({
       title: 'Empty feedback !!',
@@ -18,7 +17,6 @@ btnAddFeedback.addEventListener('click', (e) => {
       feedbackContant: textareaAddFeedback.value,
       user_id: divnone.textContent
     });
-
     fetch('/postFeedback', {
       credentials: 'same-origin',
       headers: {
@@ -27,7 +25,13 @@ btnAddFeedback.addEventListener('click', (e) => {
       method: 'POST',
       body: data
     })
-      .then(location.reload())
+      .then((res) => {
+        swal('Add feedback', 'your feed back has been succesfully added', 'success')
+          .then((ok) => {
+            location.reload();
+            textareaAddFeedback.value = '';
+          });
+      })
       .catch((err) => {
         console.log('There has been an error in post feedback', err);
       });

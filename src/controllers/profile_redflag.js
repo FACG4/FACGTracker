@@ -3,6 +3,7 @@ const getUserInfo = require('../model/quires/get_user_info');
 
 exports.get = (req, res) => {
   userRedflags.getUserRedflags(req.params.id, (getUserRedflagsErr, getUserRedflagsResult) => {
+    console.log(getUserRedflagsResult)
     if (getUserRedflagsErr) return res.status(500);
     getUserInfo(req.params.id, (getUserInfoErr, getUserInfoResult) => {
       if (getUserInfoErr) return res.status(500);
@@ -32,5 +33,6 @@ exports.post = (req, res) => {
   userRedflags.postUserRedflags(req.body.user_id, req.body.flagType, (postUserRedflagsErr, postUserRedflagsResult) => {
     console.log(req.body.user_id);
     if (postUserRedflagsErr) return res.status(500);
+    res.send('red flag has been added succesfully');
   });
 };

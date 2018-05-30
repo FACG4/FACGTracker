@@ -34,5 +34,6 @@ exports.post = (req, res) => {
   console.log(date);
   userFeedback.postUserFeedback(req.body.user_id, req.body.feedbackContant, date, (postUserFeedbackErr, postUserFeedbackResult) => {
     if (postUserFeedbackErr) return res.status(500);
+    res.send('feedback inserted');
   });
 };

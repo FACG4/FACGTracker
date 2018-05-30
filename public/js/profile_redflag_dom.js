@@ -9,7 +9,6 @@ btnAddTypeFlag.addEventListener('click', () => {
     flagType: selectType.value,
     user_id: divnone.textContent
   });
-
   fetch('/postRedflag', {
     credentials: 'same-origin',
     headers: {
@@ -18,7 +17,12 @@ btnAddTypeFlag.addEventListener('click', () => {
     method: 'POST',
     body: data
   })
-    .then(location.reload())
+    .then((res) => {
+      swal('Add feedback', 'your feed back has been succesfully added', 'success')
+        .then((ok) => {
+          location.reload();
+        });
+    })
     .catch((err) => {
       console.log('There has been an error in post feedback', err);
     });
