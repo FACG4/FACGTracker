@@ -28,11 +28,12 @@ passport.deserializeUser((user, done) => {
   }
 });
 
+const callbackURL = process.env.ENV === 'production' ? 'https://facgtracker.herokuapp.com/github/cb' : 'http://localhost:3000/github/cb';
 passport.use(new GitHubStrategy(
   {
     clientID: process.env.CLIENTID,
     clientSecret: process.env.CLIENTSECRETE,
-    callbackURL: 'http://localhost:3000/github/cb',
+    callbackURL,
     profileFields: ['username', 'bio', 'avatar_url', 'email'],
   },
   (accessToken, refreshToken, profile, done) => {
@@ -47,7 +48,7 @@ passport.use(new GitHubStrategy(
       if (!error && response.statusCode === 200) {
         const info = JSON.parse(body);
         checkuser.checkuser(info[0].email, (err, result) => {
-          if (!result.rows.length) { // email doesnt exist in db
+          if (!result.rows.length) {
             console.log('not allowed to log in , his email is not in database');
             done(null, { emaiLnotInDB: true });
           } else if (!result.rows[0].github_username) {
