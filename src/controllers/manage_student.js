@@ -9,7 +9,8 @@ exports.get = (req, res) => {
       style: ['manage_student_style.css'],
       script: ['manage_st_dom.js', 'asidebar_dom.js'],
       name: req.user.name,
-      avatar: req.user.avatar
+      avatar: req.user.avatar,
+      cohortName: req.user.cohort_name
     });
   });
 };

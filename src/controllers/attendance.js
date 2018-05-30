@@ -5,7 +5,7 @@ const formatDate = require('./format_date');
 const dateToday = formatDate.getRightFormatDate().newdate.split(',')[1];
 
 exports.get = (req, res) => {
-  attendanceQueries.getAttendanceInfo(1, '2018-05-20', (err, students) => {
+  attendanceQueries.getAttendanceInfo(req.user.cohort_id, dateToday, (err, students) => {
     if (err) {
       console.log('gettAttendaceInfoErr', err);
     } else {
@@ -23,7 +23,8 @@ exports.get = (req, res) => {
             style: ['attendance.css'],
             script: ['attendance_dom.js', 'asidebar_dom.js'],
             name: req.user.name,
-            avatar: req.user.avatar
+            avatar: req.user.avatar,
+            cohortName: req.user.cohort_name
           });
         }
       });
@@ -31,13 +32,11 @@ exports.get = (req, res) => {
   });
 };
 
-const cohortId = 1;
-const date = '2018-05-20';
 exports.insert = (req, res) => {
   const {
     id, clockIn, clockOut,
   } = req.body;
-  attendanceQueries.saveAttendance(id, clockIn, clockOut, cohortId, date, (err, info) => {
+  attendanceQueries.saveAttendance(id, clockIn, clockOut, req.user.cohort_id, dateToday, (err, info) => {
     if (err) {
       console.log('err', err);
     } else {
@@ -51,7 +50,7 @@ exports.update = (req, res) => {
     id, clockIn, clockOut,
   } = req.body;
   const userId = Number(id);
-  attendanceQueries.updateAttendance(clockIn, clockOut, cohortId, date, userId, (err, res) => {
+  attendanceQueries.updateAttendance(clockIn, clockOut, req.user.cohort_id, dateToday, userId, (err, res) => {
     if (err) {
       console.log('err', err);
     } else {
@@ -65,7 +64,7 @@ exports.delete = (req, res) => {
     id
   } = req.body;
   const userId = Number(id);
-  attendanceQueries.deleteAttendance(cohortId, date, userId, (err, result) => {
+  attendanceQueries.deleteAttendance(req.user.cohort_id, dateToday, userId, (err, result) => {
     if (err) {
       console.log('deleteErr', err);
     } else {

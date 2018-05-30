@@ -1,7 +1,7 @@
 const dbConnections = require('../db_connection');
 
 const usersName = (cb) => {
-  const sql = "SELECT * FROM users WHERE role = 'student'";
+  const sql = "SELECT * FROM users WHERE role = 'student' AND github_username IS NOT NULL";
   dbConnections.query(
     sql,
     (err, res) => {

@@ -18,6 +18,7 @@ exports.get = (req, res) => {
       script: ['asidebar_dom.js', 'com_sugg_dom.js'],
       name: req.user.name,
       avatar: req.user.avatar,
+      cohortName: req.user.cohort_name,
       suggestion,
       complaint,
       err: res.err

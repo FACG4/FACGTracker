@@ -1,17 +1,22 @@
+
 const saveAttendanceBtn = document.getElementById('saveAttendanceBtn');
 const attendanceTable = document.getElementById('attendanceTable');
 const routeName = document.querySelectorAll('a[name=attendance]')[0];
 routeName.classList.add('selected_item');
-
 attendanceTable.addEventListener('input', (e) => {
-  console.log('working');
   e.target.parentElement.parentElement.classList.add('changed');
   if (e.target.name === 'clockIn') {
     const select = e.target.parentElement.parentElement.querySelector('select');
     if (e.target.value === '') {
+      e.target.parentElement.nextElementSibling.firstElementChild.value = 0;
       select.value = 'absent';
     } else {
       select.value = 'present';
+    }
+  } else if (e.target.tagName === 'SELECT') {
+    if (e.target.value === 'absent') {
+      e.target.parentElement.nextElementSibling.firstElementChild.value = 0;
+      e.target.parentElement.nextElementSibling.nextElementSibling.firstElementChild.value = 0;
     }
   }
 });
@@ -75,12 +80,3 @@ saveAttendanceBtn.addEventListener('click', (e) => {
     tr.classList.remove('changed');
   });
 });
-
-// window.addEventListener('load', () => {
-//   fetch('/', {
-//     headers: { 'content-type': 'application/json' },
-//     method: 'POST',
-//     body: data
-//   })
-//     .then(res => res.json());
-// });

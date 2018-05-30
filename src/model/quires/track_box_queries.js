@@ -29,7 +29,7 @@ const presentSt = (date, cb) => {
 
 const abcentStudents = (cb) => {
   const date = formatDate.getRightFormatDate().newdate.split(',')[1];
-  const sql = 'SELECT id FROM users WHERE role = \'student\';';
+  const sql = 'SELECT id FROM users WHERE role = \'student\' AND github_username IS NOT NULL;';
   dbConnections.query(
     sql,
     (err, res) => {
@@ -85,8 +85,8 @@ const getTrackBoxInfo = (date, cb) => {
                     my_date: formatDate.getRightFormatDate().newdate,
                     presentSts: present.length,
                     absentSts: abcent,
-                    lateSts: leave.length,
-                    leaveSts: late.length,
+                    lateSts: late.length,
+                    leaveSts: leave.length,
                   };
                   cb(null, data);
                 }

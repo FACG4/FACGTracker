@@ -8,7 +8,7 @@ const date = formatDate.getRightFormatDate().newdate.split(',')[1];
 exports.get = (req, res) => {
   getWeekMentors((getWeekMentorsErr, getWeekMentorsResult) => {
     if (getWeekMentorsErr) return res.status(500);
-    getWeekworkshops((getWeekworkshopsErr, getWeekworkshopsResult) => {
+    getWeekworkshops(req.user.cohort_id, (getWeekworkshopsErr, getWeekworkshopsResult) => {
       if (getWeekworkshopsErr) return res.status(500);
       trackBoxQueries.getTrackBoxInfo(date, (err, result) => {
         if (err) {
@@ -26,7 +26,8 @@ exports.get = (req, res) => {
             style: ['home_style.css'],
             script: ['asidebar_dom.js', 'home_dom.js'],
             name: req.user.name,
-            avatar: req.user.avatar
+            avatar: req.user.avatar,
+            cohortName: req.user.cohort_name,
           });
         }
       });

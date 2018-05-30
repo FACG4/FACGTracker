@@ -26,9 +26,9 @@ A better way of organizing the process of applying conducts and improve the adhe
 * Invite students to register in the application .
 
 #### Samples of our prototype :
-![login page](./imgs/login.png)
-![home page](./imgs/homePage.png)
-![red flag page](./imgs/redFlag.png)
+![login page](./public/images/login.png)
+![home page](./public/images/homePage.png)
+![red flag page](./public/images/redFlag.png)
 
 There is the link of our prototype on figma website [Here ](https://www.figma.com/proto/FCcckCpvVWWkohq1R76ElzJO/FACG-tracker?node-id=45%3A20&scaling=contain)
 

@@ -19,6 +19,6 @@ exports.githubCb = (req, res) => {
   } else if (req.user.role === 'student') {
     res.redirect('/stdPanel');
   } else {
-    res.redirect('/unauthorized');
+    res.redirect('/');
   }
 };

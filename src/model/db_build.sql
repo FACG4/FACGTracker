@@ -87,7 +87,7 @@ INSERT INTO users (first_name, last_name, email, bio, phone, password, role, git
   ('Farah', 'Zaqot', 'a.zaqot@hotmail.com', 'Great man', '0599944666', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'student', 'zfarah', 1, 'https://avatars1.githubusercontent.com/u/25854070?s=400&v=4'),
   (NULL, NULL, 'abdalsamad.y.m@gamil.com', NULL, NULL, NULL, DEFAULT, NULL, 1, NULL),
   (NULL, NULL, 'anoos.haniioi@gmail.com', NULL, NULL, NULL, DEFAULT, NULL, 1, NULL),
-  (NULL, NULL, 'balsamashi888@gmail.com', NULL, NULL, NULL, 'cf', NULL, 1, NULL),
+  (NULL, NULL, 'anoos.hanii@gmail.com', NULL, NULL, NULL, 'cf', NULL, 1, NULL),
   ('Sultan', 'Asi', 'a.sultan@gmail.com', 'great mentor', '0599223456', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'mentor', 'sultanasi', NULL , NULL),
   ('Noureldean', 'Swearky', 'noureldean.saed@gmail.com', 'great mentor', '0599123416', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'mentor', 'NoureldeanSaed', NULL, NULL),
   ('Ahmed', 'Ajour', 'a.ajour@gmail.com', 'great CF', '0599123456', '$2b$10$CCSi5wCZTF5bzspFKvcveeUANKhYuQDaVFXwLZEPMG7s7SH98/iK2', 'cf', 'ahmedaj', NULL, NULL),

@@ -20,7 +20,7 @@ const getPresetStudnets = (cohortId, date, cb) => {
 
 const getAllStudnets = (cohortId, cb) => {
   const sql = {
-    text: "select first_name, last_name, id from users where role = 'student' and cohort_id = $1 and github_username is not null",
+    text: "select first_name, last_name, github_username, id from users where role = 'student' and cohort_id = $1 and github_username is not null",
     values: [cohortId]
   };
   executeQuery(sql, cb);
@@ -71,4 +71,3 @@ const deleteAttendance = (cohortId, date, userId, cb) => {
 module.exports = {
   getAttendanceInfo, saveAttendance, updateAttendance, deleteAttendance
 };
-

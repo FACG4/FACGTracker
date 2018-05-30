@@ -3,17 +3,28 @@ const GitHubStrategy = require('passport-github').Strategy;
 const request = require('request');
 const updateUsers = require('../model/quires/update_user');
 const checkuser = require('../model/quires/check_user');
+const getUserInfo = require('../model/quires/get_user_info');
 require('env2')('./config.env');
 
 passport.serializeUser((user, done) => {
   done(null, user);
 });
 
-passport.deserializeUser((id, done) => {
-  if (id == null) {
+passport.deserializeUser((user, done) => {
+  if (user == null) {
     done(new Error('Wrong user id.'));
+  } else if (user.id) {
+    getUserInfo(user.id, (err, userRes) => {
+      if (err) {
+        done(new Error('db error', err));
+      } else {
+        const userInfo = userRes[0];
+        userInfo.name = userInfo.first_name ? `${userInfo.first_name} ${userInfo.last_name}` : `${userInfo.github_username}`;
+        done(null, userInfo);
+      }
+    });
   } else {
-    done(null, id);
+    done(null, user);
   }
 });
 
@@ -36,7 +47,6 @@ passport.use(new GitHubStrategy(
       if (!error && response.statusCode === 200) {
         const info = JSON.parse(body);
         checkuser.checkuser(info[0].email, (err, result) => {
-          console.log('user information from database', result.rows);
           if (!result.rows.length) { // email doesnt exist in db
             console.log('not allowed to log in , his email is not in database');
             done(null, { emaiLnotInDB: true });
@@ -55,9 +65,7 @@ passport.use(new GitHubStrategy(
             done(null, {
               id: result.rows[0].id,
               errDb: err,
-              role: result.rows[0].role,
-              name: result.rows[0].github_username,
-              avatar: result.rows[0].avatar
+              role: result.rows[0].role
             });
           }
         });
