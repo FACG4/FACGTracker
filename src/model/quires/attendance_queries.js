@@ -12,7 +12,7 @@ const executeQuery = (sql, cb) => {
 
 const getPresetStudnets = (cohortId, date, cb) => {
   const sql = {
-    text: 'select attendance.*, users.first_name, users.last_name from attendance inner join users ON users.id = attendance.user_id where attendance.day_id = (select days.id from days inner join weeks on weeks.id = days.week_id where users.github_username is not null and weeks.cohort_id = $1 and days.date = $2)',
+    text: 'select attendance.*, users.first_name, users.last_name from attendance inner join users ON users.id = attendance.user_id where users.role = \'student\' and attendance.day_id = (select days.id from days inner join weeks on weeks.id = days.week_id where users.github_username is not null and weeks.cohort_id = $1 and days.date = $2)',
     values: [cohortId, date],
   };
   executeQuery(sql, cb);
