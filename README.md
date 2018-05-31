@@ -1,4 +1,4 @@
-## FACGTracker
+## FACGTracker :sparkles: :sparkles:
 
 #### Our application is about :
 1.  Tracking students attendance and their behavior .
@@ -61,7 +61,7 @@ There is the link of our prototype on figma website [Here ](https://www.figma.co
 
 ### Technologies:
 ``` HTML
-CSS, JS, ExpressJS, Hb, Postgres, Github authentication API v3
+CSS, JS, ExpressJS, Hb, Postgres, Passport and dithub strategy , google API
 ```
 # How to run? :key: :runner:
  ### Visit the [Link](https://facgtracker.herokuapp.com)
