@@ -18,7 +18,7 @@ passport.deserializeUser((user, done) => {
       if (err) {
         done(new Error('db error', err));
       } else {
-        const userInfo = userRes[0];
+        const userInfo = userRes[0] ? userRes[0] : done(new Error('something wrong'));
         userInfo.name = userInfo.first_name ? `${userInfo.first_name} ${userInfo.last_name}` : `${userInfo.github_username}`;
         done(null, userInfo);
       }
