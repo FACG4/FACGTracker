@@ -25,16 +25,33 @@ A better way of organizing the process of applying conducts and improve the adhe
 * View students information .
 * Invite students to register in the application .
 
-#### Samples of our prototype :
-![login page](./imgs/login.png)
-![home page](./imgs/homePage.png)
-![red flag page](./imgs/redFlag.png)
+### Database Schema
+![DB](./imgs/schema.png)
+
+### Flow chart
+
+### User testing findings:
+
+#### Prototype
+* Good app , but UI needs some changes.
+
+#### MVP user testing findings:
+* UI, UX still needs more improvment.
+* Bug with attendance and invite student (temporarily fixed).
 
 There is the link of our prototype on figma website [Here ](https://www.figma.com/proto/FCcckCpvVWWkohq1R76ElzJO/FACG-tracker?node-id=45%3A20&scaling=contain)
 
+### Technologies:
+``` HTML
+CSS, JS, ExpressJS, Hb, Postgres, Github authentication API v3
+```
+# How to run? :key: :runner:
+ ### Visit the [Link](https://facgtracker.herokuapp.com)
 
-#### The technology that we will use :
-* Express .
-* Postgres .
-* Handle Bars .
-* CSS .
+ ### A coder? don't worry it's open source!  :boom: :fire: :
+ 1) Clone the repo `https://github.com/FACG2/Fac-Community.git`
+ 2) Run $ npm install
+ 3) $ npm run build:db, npm run watch
+ 4) Use your browser and jump into `localhost:3000`
+
+group.members = { a.shatat, amusameh, inasstubail, balsam-faysal } 
