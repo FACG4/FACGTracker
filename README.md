@@ -26,7 +26,7 @@ A better way of organizing the process of applying conducts and improve the adhe
 * Invite students to register in the application .
 
 ### Database Schema
-![DB](./imgs/schema.png)
+![DB](file:///home/balsam/Pictures/Screenshot%20from%202018-05-31%2009-59-27.png)
 
 ### Flow chart
 
