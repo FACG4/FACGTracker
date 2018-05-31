@@ -1,0 +1,35 @@
+<section class="home_body_style">
+  {{>asidebar}}
+  <div class="no_padding">
+    {{>trackBox}}
+    <div class="container_tables">
+      <table>
+        <tr class="table_title_style">
+          <th>Week Mentors</th>
+        </tr>
+        {{#each weekMentors}}
+          <tr>
+            <th>{{this.first_name}} {{this.last_name}}</th>
+          </tr>
+        {{/each}}
+      </table>
+      <table>
+        <tr class="title_style">
+          <th>Week in progress : week{{weekWorkshops1.week_no}} ( {{weekWorkshops1.name}} )</th>
+        </tr>
+        <tr class="subtitle_style">
+          <th>Today’s schedule</th>
+        </tr>
+        <tr class="subtitle2_style">
+          <th>day{{weekWorkshops1.day_no}}</th>
+        </tr>
+        {{#each weekWorkshops}}
+          <tr>
+            <th>{{this.start_time}} {{this.end_time}} {{this.title}} </th>
+          </tr>
+        {{/each}}
+      </table>
+    </div>
+  </div>
+
+</section>

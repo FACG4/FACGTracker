@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang='en'>
+{{>htmlHead}}
+
+<body>
+  {{>header}}
+  <main class="main">
+    {{{body}}}
+  </main>
+  {{>footer}}
+  <script type='text/javascript' src='/js/logic.js'></script>
+  {{#if script}}
+  {{#each script}}
+    <script type='text/javascript' src='/js/{{this}}'>
+    </script>
+  {{/each}}
+  {{/if}}
+</body>
+</html>
