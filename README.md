@@ -41,6 +41,24 @@ A better way of organizing the process of applying conducts and improve the adhe
 
 There is the link of our prototype on figma website [Here ](https://www.figma.com/proto/FCcckCpvVWWkohq1R76ElzJO/FACG-tracker?node-id=45%3A20&scaling=contain)
 
+### Finished Tasks:
+- [x] Login as student if he is invited or cf, auth with Github.
+- [x] Home page for view student statistics, week mentors and schedule for current week with current data and chenge it daily . 
+- [x] Take attendence.
+- [x] Profile page for students.
+- [x] Add feedback for student.
+- [x] Add red flag for student.
+- [x] Delete any student.
+- [x] Invite student by adding his email.
+- [x] Undo invite student by delete his email.
+- [x] view complaints and suggestion for cf and specified with student name.
+- [x] Deleing with unauthenticated users and wrong routes.
+- [x] Authorization for cf and student.
+
+### Unfinished Tasks (Future plans):
+- [ ] Weekly and monthly reports.
+- [ ] Footer (under development.
+
 ### Technologies:
 ``` HTML
 CSS, JS, ExpressJS, Hb, Postgres, Github authentication API v3
