@@ -67,9 +67,9 @@ CSS, JS, ExpressJS, Hb, Postgres, Passport and dithub strategy , google API
  ### Visit the [Link](https://facgtracker.herokuapp.com)
 
  ### A coder? don't worry it's open source!  :boom: :fire: :
- 1) Clone the repo `https://github.com/FACG2/Fac-Community.git`
+ 1) Clone the repo `https://github.com/FACG4/FACGTracker.git`
  2) Run $ npm install
- 3) $ npm run build:db, npm run watch
+ 3) $ npm run build:db, npm run dev
  4) Use your browser and jump into `localhost:3000`
 
 group.members = { a.shatat, amusameh, inasstubail, balsam-faysal } 
