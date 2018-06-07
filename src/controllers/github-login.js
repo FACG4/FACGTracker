@@ -1,5 +1,6 @@
 const passport = require('passport');
 
+
 exports.get = (req, res) => {
   res.render('login', {
     style: ['login_style.css']
@@ -11,9 +12,13 @@ exports.githubInteract = passport.authenticate('github', {
 });
 
 exports.githubCb = (req, res) => {
-  res.redirect('/');
+  console.log(req.user.role);
+
+  if (req.user.role === 'cf') {
+    res.redirect('/');
+  } else if (req.user.role === 'student') {
+    res.redirect('/stdPanel');
+  } else {
+    res.redirect('/unauthorized');
+  }
 };
-
-// https://api.github.com/user/emails?access_token=a745e9c1a47a15ce8fa616c5463f775f59817f1f
-// https://api.github.com/user/orgs?access_token=a745e9c1a47a15ce8fa616c5463f775f59817f1f
-
